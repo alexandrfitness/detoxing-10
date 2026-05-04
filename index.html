@@ -7,7 +7,7 @@
 <title>DETOXING 10 — Bisharova Clinic, Уфа</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #EEF2F6;
@@ -34,18 +34,14 @@
     overflow-x: hidden;
     font-weight: 400;
   }
-  .serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.005em;
-  }
   h1, h2, h3, h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.025em;
     line-height: 1.1;
     color: var(--ink);
   }
+  em, i { font-style: normal; }
   a { color: inherit; text-decoration: none; }
   .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 
@@ -86,8 +82,8 @@
     padding: 16px 36px;
     background: var(--ink);
     color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
     font-size: 12px;
     letter-spacing: 0.18em;
     border: 1.5px solid var(--ink);
@@ -97,10 +93,7 @@
     text-transform: uppercase;
   }
   .btn:hover { background: transparent; color: var(--ink); transform: translateY(-2px); }
-  .btn-ghost {
-    background: transparent;
-    color: var(--ink);
-  }
+  .btn-ghost { background: transparent; color: var(--ink); }
   .btn-ghost:hover { background: var(--ink); color: #fff; }
   .btn-sm { padding: 12px 26px; font-size: 11px; }
   .btn-block { width: 100%; }
@@ -121,16 +114,16 @@
   .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--ink);
     transition: color .2s;
     letter-spacing: 0.01em;
   }
   .nav-links a:hover { color: var(--ink-2); }
   .nav-right { display: flex; align-items: center; gap: 22px; }
-  .nav-phone { font-size: 13px; font-weight: 600; color: var(--ink); white-space: nowrap; letter-spacing: 0.02em; }
+  .nav-phone { font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); white-space: nowrap; letter-spacing: 0.02em; }
   .nav-toggle {
     display: none; background: none; border: none; cursor: pointer;
     width: 36px; height: 36px; color: var(--ink); font-size: 22px;
@@ -143,18 +136,19 @@
     font-size: 11px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 24px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
   }
 
   /* ----- Section base ----- */
   .section { padding: 120px 0; position: relative; }
-  .section-head { max-width: 720px; margin: 0 auto 72px; text-align: center; }
+  .section-head { max-width: 760px; margin: 0 auto 72px; text-align: center; }
   .section h2 {
-    font-size: clamp(40px, 5vw, 64px);
+    font-size: clamp(36px, 4.5vw, 56px);
     margin-bottom: 18px;
-    font-weight: 400;
+    font-weight: 800;
+    letter-spacing: -0.025em;
   }
   .section-lead { color: var(--ink-2); font-size: 17px; max-width: 580px; margin: 0 auto; line-height: 1.7; }
 
@@ -162,18 +156,20 @@
   .hero { padding: 160px 0 100px; position: relative; }
   .hero-content { max-width: 880px; margin: 0 auto; text-align: center; }
   .hero h1 {
-    font-size: clamp(48px, 7vw, 88px);
+    font-size: clamp(44px, 6vw, 76px);
     line-height: 1.05;
     margin-bottom: 28px;
-    font-weight: 400;
+    font-weight: 800;
+    letter-spacing: -0.03em;
   }
-  .hero h1 em { font-style: italic; color: var(--ink); }
+  .hero h1 .accent { color: var(--ink); }
   .hero-sub {
     font-size: 19px;
     color: var(--ink-2);
     margin: 0 auto 44px;
     max-width: 580px;
     line-height: 1.7;
+    font-weight: 400;
   }
   .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; }
   .hero-disclaimer { font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; }
@@ -188,28 +184,26 @@
     overflow: hidden;
     border: 1px solid var(--line);
   }
-  .hero-stat {
-    background: var(--bg-card);
-    padding: 36px 24px;
-    text-align: center;
-  }
+  .hero-stat { background: var(--bg-card); padding: 36px 24px; text-align: center; }
   .hero-stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
-    font-size: 56px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 52px;
     line-height: 1;
     color: var(--ink);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    letter-spacing: -0.04em;
   }
   .hero-stat-label {
     font-size: 11px;
     color: var(--ink-2);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
   }
 
-  /* ============ BOOK CARD (главный паттерн карточки-папки) ============ */
+  /* ============ BOOK CARD ============ */
   .book {
     position: relative;
     aspect-ratio: 1 / 1;
@@ -219,8 +213,7 @@
     filter: drop-shadow(0 16px 24px rgba(26, 40, 69, 0.10)) drop-shadow(0 4px 8px rgba(26, 40, 69, 0.06));
   }
   .book-inner {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: #F4F6F9;
     border-radius: 8px;
     overflow: hidden;
@@ -242,25 +235,9 @@
     border-radius: 50%;
     transform: translateY(-50%);
   }
-  .book-body {
-    flex: 1;
-    display: flex;
-    position: relative;
-    padding: 22px 22px 18px;
-  }
-  .book-content {
-    position: relative;
-    z-index: 2;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .book-stripe {
-    position: absolute;
-    top: 0; right: 0; bottom: 0;
-    width: 30%;
-    z-index: 0;
-  }
+  .book-body { flex: 1; display: flex; position: relative; padding: 22px 22px 18px; }
+  .book-content { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; }
+  .book-stripe { position: absolute; top: 0; right: 0; bottom: 0; width: 30%; z-index: 0; }
   .stripe-sage { background: var(--sage); }
   .stripe-cream { background: var(--cream); }
   .stripe-slate { background: var(--slate); }
@@ -274,8 +251,7 @@
     color: var(--ink);
     letter-spacing: -0.01em;
     margin-bottom: 4px;
-    position: relative;
-    z-index: 2;
+    position: relative; z-index: 2;
   }
   .book-subtitle {
     font-family: 'Manrope', sans-serif;
@@ -283,15 +259,9 @@
     font-size: 14px;
     color: var(--ink);
     line-height: 1.2;
-    position: relative;
-    z-index: 2;
+    position: relative; z-index: 2;
   }
-  .book-icon {
-    position: absolute;
-    bottom: 22px; right: 22px;
-    width: 60px; height: 60px;
-    z-index: 2;
-  }
+  .book-icon { position: absolute; bottom: 22px; right: 22px; width: 60px; height: 60px; z-index: 2; }
   .book-icon svg { width: 100%; height: 100%; display: block; }
   .book-mark {
     position: absolute;
@@ -303,29 +273,17 @@
     z-index: 2;
     letter-spacing: -0.04em;
   }
-  /* Stack effect for package cards */
-  .book.stack::before,
-  .book.stack::after {
+  .book.stack::before, .book.stack::after {
     content: '';
     position: absolute;
     background: #F4F6F9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(26, 40, 69, 0.08);
   }
-  .book.stack::before {
-    inset: -8px -10px -4px -6px;
-    z-index: -1;
-    transform: rotate(-2deg);
-    opacity: 0.7;
-  }
-  .book.stack::after {
-    inset: -4px -16px 0 -2px;
-    z-index: -2;
-    transform: rotate(-4deg);
-    opacity: 0.4;
-  }
+  .book.stack::before { inset: -8px -10px -4px -6px; z-index: -1; transform: rotate(-2deg); opacity: 0.7; }
+  .book.stack::after { inset: -4px -16px 0 -2px; z-index: -2; transform: rotate(-4deg); opacity: 0.4; }
 
-  /* ============ PRODUCT CARD (карточка с книгой + контент под ней) ============ */
+  /* ============ PRODUCT CARD ============ */
   .product {
     background: var(--bg-card);
     border-radius: 22px;
@@ -335,11 +293,12 @@
   }
   .product:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(26, 40, 69, 0.08); }
   .product h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
-    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
     margin-bottom: 14px;
-    line-height: 1.15;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
   .product p.desc {
     color: var(--ink-2);
@@ -348,57 +307,50 @@
     margin-bottom: 24px;
     min-height: 44px;
   }
-  .product .price-block {
-    margin-bottom: 28px;
-  }
+  .product .price-block { margin-bottom: 28px; }
   .product .price {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 32px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
     color: var(--ink);
     line-height: 1;
+    letter-spacing: -0.02em;
   }
   .product .price-old {
     display: block;
     color: var(--ink-3);
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: line-through;
-    margin-top: 6px;
+    margin-top: 8px;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
   }
   .product .price-save {
     display: block;
     color: var(--ink-2);
-    font-size: 13px;
+    font-size: 12px;
     margin-top: 6px;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
-  /* ============ ВКЛЮЧЕНО (4 cards) ============ */
-  .includes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
+  /* ============ ВКЛЮЧЕНО ============ */
+  .includes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 
-  /* ============ AUDIENCE (две колонки списков) ============ */
-  .audience-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
+  /* ============ AUDIENCE ============ */
+  .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
   .aud-card {
     background: var(--bg-card);
     border-radius: 22px;
     padding: 48px 44px;
   }
   .aud-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
     margin-bottom: 28px;
+    letter-spacing: -0.02em;
   }
   .aud-card .eyebrow { margin-bottom: 14px; }
   .aud-list { display: flex; flex-direction: column; gap: 18px; }
@@ -421,74 +373,142 @@
   }
   .aud-card.notfit .aud-item .dot { background: var(--ink-3); }
 
-  /* ============ STAGES ============ */
-  .stages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+  /* ============ TIMELINE / STAGES ============ */
+  .timeline { position: relative; max-width: 1080px; margin: 0 auto; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px; top: 30px; bottom: 30px;
+    width: 2px;
+    background: var(--line);
   }
-  .stage {
+  .tl-stage {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 48px;
+  }
+  .tl-stage:last-child { margin-bottom: 0; }
+  .tl-num {
+    position: absolute;
+    left: 0; top: 8px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    z-index: 1;
+    letter-spacing: -0.02em;
+  }
+  .tl-card {
     background: var(--bg-card);
     border-radius: 22px;
-    padding: 48px 36px;
-    position: relative;
+    padding: 40px 44px;
   }
-  .stage-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 20px;
-    color: var(--ink-2);
-    margin-bottom: 8px;
-    display: block;
-  }
-  .stage h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    line-height: 1.1;
-  }
-  .stage-duration {
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
+  .tl-eyebrow {
+    font-family: 'Manrope', sans-serif;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
+    font-weight: 700;
     color: var(--ink-2);
+    margin-bottom: 10px;
+  }
+  .tl-card h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    letter-spacing: -0.025em;
+  }
+  .tl-meta {
+    display: inline-flex;
+    align-items: center; gap: 8px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
+    border-radius: 999px;
     margin-bottom: 24px;
   }
-  .stage p { font-size: 15px; color: var(--ink-2); margin-bottom: 22px; line-height: 1.6; }
-  .stage ul {
+  .tl-card p.tl-intro {
+    font-size: 15px;
+    color: var(--ink-2);
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+  .tl-section-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin: 22px 0 14px;
+    display: block;
+  }
+  .tl-list {
     list-style: none;
-    padding-top: 22px;
-    border-top: 1px solid var(--line);
-    display: flex;
-    flex-direction: column;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 10px;
   }
-  .stage ul li {
-    font-size: 14px;
+  .tl-list.two-col { grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+  .tl-list li {
+    font-size: 14.5px;
     color: var(--ink);
-    padding-left: 18px;
+    padding-left: 22px;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.55;
   }
-  .stage ul li::before {
+  .tl-list li::before {
     content: '';
     position: absolute;
     left: 0; top: 9px;
-    width: 6px; height: 6px;
-    background: var(--ink);
+    width: 8px; height: 8px;
+    border: 1.5px solid var(--ink);
     border-radius: 50%;
+    background: transparent;
+  }
+  .tl-effect {
+    margin-top: 22px;
+    padding: 18px 22px;
+    background: var(--bg);
+    border-radius: 14px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .tl-effect-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin-bottom: 6px;
+  }
+  .tl-effect p {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .tl-effect-icon {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    display: flex; align-items: center; justify-content: center;
   }
 
   /* ============ RESULTS ============ */
-  .results-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-  }
+  .results-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
   .result-card {
     background: var(--bg-card);
     border-radius: 22px;
@@ -502,20 +522,24 @@
   }
   .result-icon svg { width: 100%; height: 100%; }
   .result-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
     margin-bottom: 10px;
-    line-height: 1.2;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
   }
   .result-card p { font-size: 13px; color: var(--ink-2); line-height: 1.55; }
+  .results-disclaimer {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 12px;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+  }
 
   /* ============ DOCTORS ============ */
-  .doctors-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
+  .doctors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .doc-card {
     background: var(--bg-card);
     border-radius: 22px;
@@ -534,19 +558,20 @@
     text-align: center;
     padding: 14px;
     border: 1px dashed var(--ink-3);
-    font-weight: 500;
+    font-weight: 600;
   }
   .doc-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
     margin-bottom: 6px;
+    letter-spacing: -0.02em;
   }
   .doc-spec {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 11px;
     color: var(--ink-2);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 18px;
@@ -554,19 +579,11 @@
   .doc-bio { font-size: 14px; color: var(--ink-2); line-height: 1.6; }
 
   /* ============ PRICES ============ */
-  .prices-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
+  .prices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .product.featured { background: #FBFBFD; box-shadow: 0 24px 48px rgba(26, 40, 69, 0.08); }
 
   /* ============ REVIEWS ============ */
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .review {
     background: var(--bg-card);
     border-radius: 22px;
@@ -575,21 +592,23 @@
     flex-direction: column;
   }
   .review-mark {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 56px;
     line-height: 0.5;
     color: var(--slate);
-    margin-bottom: 14px;
-    height: 32px;
+    margin-bottom: 18px;
+    height: 28px;
   }
   .review-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    line-height: 1.5;
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
     color: var(--ink);
     flex: 1;
     margin-bottom: 28px;
     font-weight: 500;
+    letter-spacing: -0.01em;
   }
   .review-author {
     display: flex;
@@ -603,16 +622,16 @@
     border-radius: 50%;
     background: var(--bg);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
     color: var(--ink);
-    font-size: 18px;
+    font-size: 16px;
     flex-shrink: 0;
   }
   .review-name {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--ink);
   }
   .review-meta { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
@@ -632,12 +651,13 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
-    font-size: 22px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
     padding: 26px 32px;
     gap: 24px;
-    line-height: 1.3;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
   }
   .faq-q .plus {
     width: 28px; height: 28px;
@@ -663,7 +683,7 @@
     overflow: hidden;
     transition: max-height .35s ease, padding .35s ease;
     color: var(--ink-2);
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.65;
     padding: 0 32px;
   }
@@ -681,13 +701,13 @@
     padding: 64px;
     box-shadow: 0 24px 48px rgba(26, 40, 69, 0.06);
   }
-  .book-left h2 { font-size: clamp(36px, 4.5vw, 52px); margin-bottom: 18px; font-weight: 400; }
-  .book-bonus {
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  .book-left h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    margin-bottom: 18px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
   }
+  .book-bonus { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
   .book-bonus-item {
     display: flex; gap: 14px; align-items: flex-start;
     color: var(--ink);
@@ -701,17 +721,19 @@
     padding: 36px;
   }
   .book-form h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
     margin-bottom: 6px;
+    letter-spacing: -0.02em;
   }
   .book-form p.note { font-size: 13px; color: var(--ink-2); margin-bottom: 24px; }
   .field { margin-bottom: 16px; }
   .field label {
     display: block;
+    font-family: 'Manrope', sans-serif;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--ink-2);
@@ -738,15 +760,11 @@
   .checkbox-row a { text-decoration: underline; color: var(--ink); }
   .form-success { display: none; text-align: center; padding: 40px 0; }
   .form-success.visible { display: block; }
-  .form-success h3 { font-size: 28px; margin-bottom: 10px; }
+  .form-success h3 { font-size: 26px; margin-bottom: 10px; font-weight: 800; }
   .form-success p { color: var(--ink-2); }
 
   /* ============ CONTACTS ============ */
-  .contacts-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 28px;
-  }
+  .contacts-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 28px; }
   .contact-info {
     background: var(--bg-card);
     border-radius: 22px;
@@ -756,21 +774,23 @@
   .contact-block:last-child { border-bottom: none; padding-bottom: 0; }
   .contact-block:first-child { padding-top: 0; }
   .contact-label {
+    font-family: 'Manrope', sans-serif;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--ink-2);
     margin-bottom: 10px;
   }
   .contact-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
     color: var(--ink);
-    line-height: 1.3;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
   }
-  .contact-value.small { font-size: 13px; color: var(--ink-2); font-family: 'Inter', sans-serif; line-height: 1.55; }
+  .contact-value.small { font-size: 13px; color: var(--ink-2); font-family: 'Inter', sans-serif; line-height: 1.55; font-weight: 400; letter-spacing: 0; }
   .map-embed {
     border-radius: 22px;
     overflow: hidden;
@@ -781,7 +801,7 @@
     font-size: 13px;
     text-align: center;
     padding: 24px;
-    font-weight: 500;
+    font-weight: 600;
   }
   .map-embed iframe { width: 100%; height: 100%; border: none; }
 
@@ -811,13 +831,13 @@
     margin-bottom: 56px;
   }
   .footer-col h4 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     color: var(--ink);
     font-size: 11px;
     margin-bottom: 22px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
   }
   .footer-col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
   .footer-col a { font-size: 14px; transition: color .2s; }
@@ -856,10 +876,15 @@
     .hero-stats { grid-template-columns: 1fr; }
     .hero-stat { padding: 24px 16px; }
     .hero-stat-num { font-size: 42px; }
-    .includes-grid, .audience-grid, .stages-grid, .doctors-grid, .prices-grid, .reviews-grid, .contacts-grid {
+    .includes-grid, .audience-grid, .doctors-grid, .prices-grid, .reviews-grid, .contacts-grid {
       grid-template-columns: 1fr;
     }
     .results-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline::before { left: 16px; }
+    .tl-stage { padding-left: 56px; }
+    .tl-num { width: 36px; height: 36px; font-size: 14px; }
+    .tl-card { padding: 32px 26px; }
+    .tl-list.two-col { grid-template-columns: 1fr; }
     .book-grid { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
@@ -867,7 +892,6 @@
     .footer-grid { grid-template-columns: 1fr; }
     .product { padding: 40px 24px 36px; }
     .aud-card { padding: 36px 28px; }
-    .stage { padding: 36px 28px; }
     .results-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -886,8 +910,8 @@
       <a href="#includes">Что входит</a>
       <a href="#audience">Кому подходит</a>
       <a href="#stages">Этапы</a>
+      <a href="#results">Результаты</a>
       <a href="#prices">Тарифы</a>
-      <a href="#faq">Вопросы</a>
       <a href="#contacts">Контакты</a>
     </div>
 
@@ -906,7 +930,7 @@
       <div class="eyebrow">Bisharova Clinic · Уфа</div>
 
       <h1>
-        Программа очищения <em>«Детоксинг 10»</em>. Десять дней под наблюдением врача
+        Программа очищения <span class="accent">«Детоксинг 10»</span>. Десять дней под наблюдением врача
       </h1>
 
       <p class="hero-sub">
@@ -928,7 +952,7 @@
           <div class="hero-stat-label">Дней в клинике</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">20</div>
+          <div class="hero-stat-num">20+</div>
           <div class="hero-stat-label">Процедур внутри курса</div>
         </div>
         <div class="hero-stat">
@@ -952,13 +976,12 @@
       <div class="eyebrow">Состав программы</div>
       <h2>Что входит в Детоксинг 10</h2>
       <p class="section-lead">
-        Конкретный набор: анализы, капельницы, осмотры, индивидуальное питание. Никаких «комплексных процедур» в общих словах.
+        Конкретный набор: диагностика, процедуры, консультации врача, индивидуальное питание. Никаких «комплексных подходов» в общих словах.
       </p>
     </div>
 
     <div class="includes-grid">
 
-      <!-- Card 1: Анализы -->
       <div class="product">
         <div class="book">
           <div class="book-inner">
@@ -966,8 +989,8 @@
             <div class="book-body">
               <div class="book-stripe stripe-sage"></div>
               <div class="book-content">
-                <div class="book-title">Лабораторные</div>
-                <div class="book-subtitle">Анализы</div>
+                <div class="book-title">Диагностика</div>
+                <div class="book-subtitle">Желчь и кал</div>
               </div>
               <div class="book-icon">
                 <svg viewBox="0 0 60 60" fill="none">
@@ -982,11 +1005,10 @@
             </div>
           </div>
         </div>
-        <h3>Лабораторная диагностика</h3>
-        <p class="desc">[N] анализов на старте и контроль на финише. Биохимия, печёночные пробы, гормоны — заполнит врач.</p>
+        <h3>Диагностика на старте и в середине</h3>
+        <p class="desc">Исследование желчи и кала под микроскопом на 1-й и 6-й день курса. Корректировка протокола по результатам.</p>
       </div>
 
-      <!-- Card 2: Капельницы -->
       <div class="product">
         <div class="book">
           <div class="book-inner">
@@ -994,8 +1016,8 @@
             <div class="book-body">
               <div class="book-stripe stripe-sky"></div>
               <div class="book-content">
-                <div class="book-title">Инфузионная</div>
-                <div class="book-subtitle">Терапия</div>
+                <div class="book-title">Капельницы</div>
+                <div class="book-subtitle">IV-терапия</div>
               </div>
               <div class="book-icon">
                 <svg viewBox="0 0 60 60" fill="none">
@@ -1010,10 +1032,9 @@
           </div>
         </div>
         <h3>Инфузионная терапия</h3>
-        <p class="desc">[N] капельниц с подобранным составом — гепатопротекторы, аминокислоты, витамины. Названия — заполнит врач.</p>
+        <p class="desc">10 капельниц с витаминными и многокомпонентными растворами. Состав подбирает врач по результатам диагностики.</p>
       </div>
 
-      <!-- Card 3: Консультации -->
       <div class="product">
         <div class="book">
           <div class="book-inner">
@@ -1021,8 +1042,8 @@
             <div class="book-body">
               <div class="book-stripe stripe-cream"></div>
               <div class="book-content">
-                <div class="book-title">Осмотры</div>
-                <div class="book-subtitle">Сопровождение</div>
+                <div class="book-title">Сопровождение</div>
+                <div class="book-subtitle">Врач-паразитолог</div>
               </div>
               <div class="book-icon">
                 <svg viewBox="0 0 60 60" fill="none">
@@ -1034,11 +1055,10 @@
             </div>
           </div>
         </div>
-        <h3>Консультации врача</h3>
-        <p class="desc">[N] осмотров: старт, середина, финал курса. Корректировка плана по самочувствию и анализам.</p>
+        <h3>Врач рядом весь курс</h3>
+        <p class="desc">Врач-паразитолог сопровождает весь курс. Корректирует план по самочувствию, отвечает на вопросы каждый день.</p>
       </div>
 
-      <!-- Card 4: Питание -->
       <div class="product">
         <div class="book">
           <div class="book-inner">
@@ -1046,8 +1066,8 @@
             <div class="book-body">
               <div class="book-stripe stripe-slate"></div>
               <div class="book-content">
-                <div class="book-title">План</div>
-                <div class="book-subtitle">Питания</div>
+                <div class="book-title">Питание</div>
+                <div class="book-subtitle">Индивидуально</div>
               </div>
               <div class="book-icon">
                 <svg viewBox="0 0 60 60" fill="none">
@@ -1064,7 +1084,7 @@
           </div>
         </div>
         <h3>Индивидуальное питание</h3>
-        <p class="desc">План на 10 дней под результаты анализов и образ жизни. Можно соблюдать дома и на работе.</p>
+        <p class="desc">Схема на 2 недели подготовки и 2 месяца восстановления. Под результаты анализов и образ жизни.</p>
       </div>
 
     </div>
@@ -1112,69 +1132,125 @@
   </div>
 </section>
 
-<!-- ============= STAGES ============= -->
+<!-- ============= TIMELINE / ЭТАПЫ ============= -->
 <section class="section" id="stages">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Как проходит</div>
+      <div class="eyebrow">Как проходит · Таймлайн</div>
       <h2>Три этапа программы</h2>
       <p class="section-lead">
-        Программа не сводится к 10 дням капельниц. Подготовка важнее самих процедур, восстановление закрепляет результат.
+        Программа не сводится к 10 дням капельниц. Подготовка важнее самих процедур, а восстановление закрепляет результат.
       </p>
     </div>
 
-    <div class="stages-grid">
-      <div class="stage">
-        <span class="stage-num">Этап i</span>
-        <h3>Подготовка</h3>
-        <span class="stage-duration">2 недели до старта</span>
-        <p>Сдаём анализы, корректируем рацион, убираем нагрузку на печень и ЖКТ. Тело входит в курс готовым.</p>
-        <ul>
-          <li>Лабораторная диагностика</li>
-          <li>Консультация врача и план</li>
-          <li>Подготовительный рацион</li>
-        </ul>
+    <div class="timeline">
+
+      <!-- ЭТАП 1 -->
+      <div class="tl-stage">
+        <div class="tl-num">01</div>
+        <div class="tl-card">
+          <div class="tl-eyebrow">Этап 1 · Дома</div>
+          <h3>Подготовка</h3>
+          <span class="tl-meta">2 недели до старта</span>
+          <p class="tl-intro">Подготавливаем тело к курсу: разгружаем ЖКТ и активируем работу печени. Без подготовки эффект программы будет в разы слабее.</p>
+
+          <span class="tl-section-label">Что делаем</span>
+          <ul class="tl-list">
+            <li>Индивидуальная схема питания</li>
+            <li>Препараты для поддержки печени, желчевыводящих путей и ЖКТ</li>
+          </ul>
+
+          <div class="tl-effect">
+            <div class="tl-effect-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M5 9 L8 12 L13 6" stroke="#1A2845" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="tl-effect-label">Что меняется</div>
+              <p>Активизируется работа печени и кишечника, снижается уровень интоксикации.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="stage">
-        <span class="stage-num">Этап ii</span>
-        <h3>10 дней в клинике</h3>
-        <span class="stage-duration">20 процедур</span>
-        <p>Ежедневные процедуры по индивидуальному графику. Контрольные осмотры, корректировка плана по самочувствию.</p>
-        <ul>
-          <li>Инфузионная терапия</li>
-          <li>Сопровождение врача</li>
-          <li>Контроль показателей</li>
-        </ul>
+      <!-- ЭТАП 2 -->
+      <div class="tl-stage">
+        <div class="tl-num">02</div>
+        <div class="tl-card">
+          <div class="tl-eyebrow">Этап 2 · В клинике</div>
+          <h3>Очищение</h3>
+          <span class="tl-meta">10 дней · ежедневно с 9:00 до 15:00</span>
+          <p class="tl-intro">Основной курс. 6 часов в клинике каждый день: процедуры, наблюдение врача, корректировка плана. Остальное время — свободно.</p>
+
+          <span class="tl-section-label">Диагностика и процедуры</span>
+          <ul class="tl-list two-col">
+            <li>Исследование желчи и кала под микроскопом (1-й и 6-й день)</li>
+            <li>Дуоденальное зондирование 6–7 раз: желчегонные, противопаразитарные, спазмолитики</li>
+            <li>Инфузионная терапия — витаминные и многокомпонентные капельницы (10 раз)</li>
+            <li>Карбокситерапия живот/спина (10 раз)</li>
+            <li>Противопаразитарная терапия (2 дня)</li>
+            <li>Сопровождение врача-паразитолога весь курс</li>
+            <li>Препараты и добавки на 10 дней</li>
+            <li>Кишечное орошение 2–3 раза в день</li>
+            <li>Лечебное голодание 1–3 дня по показаниям</li>
+            <li>Имплантация микрофлоры полезными бактериями (2 дня)</li>
+          </ul>
+
+          <span class="tl-section-label">Восстанавливающие процедуры</span>
+          <ul class="tl-list two-col">
+            <li>Висцеральный массаж живота</li>
+            <li>Вакуумный массаж по показаниям</li>
+            <li>Вибрационный массаж на платформе</li>
+            <li>Лимфодренажный микротоковый массаж тела по показаниям</li>
+            <li>Инфракрасная сауна ежедневно</li>
+            <li>Йодотерапия ежедневно</li>
+            <li>Светотерапия BIOPTRON ежедневно</li>
+            <li>Кислородная терапия O₂</li>
+          </ul>
+
+          <span class="tl-section-label">Питание и выписка</span>
+          <ul class="tl-list">
+            <li>Специальное питание на выходе из голода в клинике</li>
+            <li>Выписка в последний день программы в 12:00</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="stage">
-        <span class="stage-num">Этап iii</span>
-        <h3>Восстановление</h3>
-        <span class="stage-duration">2 месяца после</span>
-        <p>План питания и образа жизни на 2 месяца. Контрольный осмотр и анализы, чтобы зафиксировать результат.</p>
-        <ul>
-          <li>План на 2 месяца</li>
-          <li>Контрольный анализ</li>
-          <li>Финальная консультация</li>
-        </ul>
+      <!-- ЭТАП 3 -->
+      <div class="tl-stage">
+        <div class="tl-num">03</div>
+        <div class="tl-card">
+          <div class="tl-eyebrow">Этап 3 · Дома</div>
+          <h3>Восстановление</h3>
+          <span class="tl-meta">2 месяца после клиники</span>
+          <p class="tl-intro">Закрепляем результат и восстанавливаем микрофлору. Без этого этапа эффект не удержится надолго.</p>
+
+          <span class="tl-section-label">Что делаем</span>
+          <ul class="tl-list">
+            <li>Индивидуальные рекомендации по питанию</li>
+            <li>Схема приёма добавок для восстановления микрофлоры</li>
+          </ul>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ============= RESULTS ============= -->
-<section class="section" style="background: var(--bg-card);">
+<section class="section" id="results" style="background: var(--bg-card);">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Что меняется</div>
-      <h2>Что обычно отмечают пациенты</h2>
+      <h2>Результаты программы</h2>
       <p class="section-lead">
-        Эффект индивидуальный, зависит от стартового состояния и того, как соблюдаете план. Без обещаний и гарантий.
+        Это типичные эффекты, которые отмечают пациенты. Конкретный результат зависит от стартового состояния и того, как соблюдаете план.
       </p>
     </div>
 
     <div class="results-grid">
+
       <div class="result-card" style="background: var(--bg);">
         <div class="result-icon">
           <svg viewBox="0 0 56 56" fill="none">
@@ -1183,8 +1259,8 @@
             <circle cx="42" cy="20" r="3" stroke="#1A2845" stroke-width="2" fill="#fff"/>
           </svg>
         </div>
-        <h3>Лёгкость в теле</h3>
-        <p>Уходит тяжесть, появляется ощущение свободы движения и дыхания.</p>
+        <h3>Очищение от паразитов и патогенной флоры</h3>
+        <p>Программа выявляет и убирает скрытые источники интоксикации.</p>
       </div>
 
       <div class="result-card" style="background: var(--bg);">
@@ -1194,8 +1270,18 @@
             <path d="M22 32 Q25 28 28 32 Q31 36 34 32" stroke="#1A2845" stroke-width="1.6" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Меньше отёков</h3>
-        <p>Лицо и руки утром выглядят свежее, кольца перестают давить.</p>
+        <h3>Восстановление работы печени и ЖКТ</h3>
+        <p>Снимается нагрузка с печени, нормализуется работа кишечника.</p>
+      </div>
+
+      <div class="result-card" style="background: var(--bg);">
+        <div class="result-icon">
+          <svg viewBox="0 0 56 56" fill="none">
+            <path d="M28 12 L36 26 L30 26 L32 44 L20 24 L26 24 Z" stroke="#1A2845" stroke-width="2" fill="none" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Рост энергии и иммунитета</h3>
+        <p>К вечеру не выжаты, реже болеете, лучше переносите нагрузки.</p>
       </div>
 
       <div class="result-card" style="background: var(--bg);">
@@ -1206,30 +1292,24 @@
             <path d="M22 33 Q28 38 34 33" stroke="#1A2845" stroke-width="1.6" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Чище кожа</h3>
-        <p>Тон ровнее, меньше высыпаний, лицо «оживает» к концу курса.</p>
+        <h3>Лучше кожа и сон</h3>
+        <p>Тон ровнее, меньше высыпаний, засыпаете легче и просыпаетесь отдохнувшими.</p>
       </div>
 
       <div class="result-card" style="background: var(--bg);">
         <div class="result-icon">
           <svg viewBox="0 0 56 56" fill="none">
-            <path d="M40 14 Q26 16 26 28 Q26 38 36 40 Q24 44 18 36 Q14 26 22 18 Q28 14 40 14 Z" stroke="#1A2845" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            <path d="M16 18 L40 18 L40 40 Q40 44 36 44 L20 44 Q16 44 16 40 Z" stroke="#1A2845" stroke-width="2" fill="none"/>
+            <path d="M22 26 L34 26 M22 32 L30 32" stroke="#1A2845" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Спокойный сон</h3>
-        <p>Засыпать легче, утром ощущение, что выспались.</p>
+        <h3>Здоровые привычки питания</h3>
+        <p>Уносите рабочую схему питания и образа жизни на месяцы вперёд.</p>
       </div>
 
-      <div class="result-card" style="background: var(--bg);">
-        <div class="result-icon">
-          <svg viewBox="0 0 56 56" fill="none">
-            <path d="M28 14 L36 28 L30 28 L32 42 L20 24 L26 24 Z" stroke="#1A2845" stroke-width="2" fill="none" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Больше энергии</h3>
-        <p>К вечеру не выжаты как раньше, держится концентрация.</p>
-      </div>
     </div>
+
+    <p class="results-disclaimer">Результаты индивидуальны. Гарантии конкретных цифр программа не даёт.</p>
   </div>
 </section>
 
@@ -1282,7 +1362,6 @@
 
     <div class="prices-grid">
 
-      <!-- Лайт -->
       <div class="product" style="background: var(--bg);">
         <div class="book">
           <div class="book-inner">
@@ -1311,7 +1390,6 @@
         <a href="#book" class="btn btn-block">Узнать больше</a>
       </div>
 
-      <!-- Групповая (featured, stack) -->
       <div class="product featured">
         <div class="book stack">
           <div class="book-inner">
@@ -1329,10 +1407,6 @@
                   <ellipse cx="30" cy="46" rx="4" ry="8" stroke="#1A2845" stroke-width="1.6" fill="none"/>
                   <ellipse cx="14" cy="30" rx="8" ry="4" stroke="#1A2845" stroke-width="1.6" fill="none"/>
                   <ellipse cx="46" cy="30" rx="8" ry="4" stroke="#1A2845" stroke-width="1.6" fill="none"/>
-                  <ellipse cx="18" cy="18" rx="6" ry="4" stroke="#1A2845" stroke-width="1.6" fill="none" transform="rotate(45 18 18)"/>
-                  <ellipse cx="42" cy="18" rx="6" ry="4" stroke="#1A2845" stroke-width="1.6" fill="none" transform="rotate(-45 42 18)"/>
-                  <ellipse cx="42" cy="42" rx="6" ry="4" stroke="#1A2845" stroke-width="1.6" fill="none" transform="rotate(45 42 42)"/>
-                  <ellipse cx="18" cy="42" rx="6" ry="4" stroke="#1A2845" stroke-width="1.6" fill="none" transform="rotate(-45 18 42)"/>
                 </svg>
               </div>
               <div class="book-mark">NH</div>
@@ -1349,7 +1423,6 @@
         <a href="#book" class="btn btn-block">Узнать больше</a>
       </div>
 
-      <!-- Индивидуальная -->
       <div class="product" style="background: var(--bg);">
         <div class="book stack">
           <div class="book-inner">
@@ -1395,7 +1468,7 @@
 
     <div class="reviews-grid">
       <div class="review">
-        <div class="review-mark">“</div>
+        <div class="review-mark">"</div>
         <p class="review-text">[Отзыв пациента — реальный, с конкретикой. «До курса не могла надеть кольцо, через 8 дней слезло само. Минус 3 кг отёков, перестала храпеть» — заполнить реальным.]</p>
         <div class="review-author">
           <div class="review-avatar">А</div>
@@ -1407,7 +1480,7 @@
       </div>
 
       <div class="review">
-        <div class="review-mark">“</div>
+        <div class="review-mark">"</div>
         <p class="review-text">[Отзыв пациента — реальный. «Попал после курса антибиотиков, печень была жёсткая. После программы анализы вернулись к норме, перестала тянуть боль в правом боку».]</p>
         <div class="review-author">
           <div class="review-avatar">М</div>
@@ -1419,7 +1492,7 @@
       </div>
 
       <div class="review">
-        <div class="review-mark">“</div>
+        <div class="review-mark">"</div>
         <p class="review-text">[Отзыв пациента — про сон, кожу или вес. Конкретные цифры или ощущения, без шаблонов.]</p>
         <div class="review-author">
           <div class="review-avatar">Е</div>
@@ -1444,22 +1517,22 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">Это безопасно?<span class="plus"></span></div>
-        <div class="faq-a">Программа проходит под наблюдением врача. До старта — анализы и осмотр. Если есть противопоказания — врач об этом скажет на бесплатной диагностике, и до программы вы не дойдёте. Никаких «капельниц вслепую».</div>
+        <div class="faq-a">Программа проходит под наблюдением врача-паразитолога. До старта — анализы и осмотр. Если есть противопоказания — врач об этом скажет на бесплатной диагностике, и до программы вы не дойдёте. Никаких «капельниц вслепую».</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">Можно ли работать во время курса?<span class="plus"></span></div>
-        <div class="faq-a">Да. Процедуры занимают [N] часов в день, остальное время свободно. Большинство пациентов совмещают курс с работой. Тяжёлые тренировки и алкоголь — на паузе.</div>
+        <div class="faq-a">Курс занимает 6 часов в день — с 9:00 до 15:00, ежедневно 10 дней подряд. После клиники остальное время свободно. Большинство пациентов совмещают курс с работой во второй половине дня. Тяжёлые тренировки и алкоголь — на паузе.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">Чем Детоксинг 10 отличается от «детокса» из инстаграма?<span class="plus"></span></div>
-        <div class="faq-a">Тут не БАДы и «чудо-чаи». Это медицинская программа в клинике с лицензией. Всё подбирает врач по результатам ваших анализов. Капельницы — лекарственные растворы, не «витамины красоты неизвестного состава».</div>
+        <div class="faq-a">Тут не БАДы и «чудо-чаи». Это медицинская программа в клинике с лицензией. Всё подбирает врач-паразитолог по результатам ваших анализов. Капельницы — лекарственные растворы, не «витамины красоты неизвестного состава».</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">Какая диета во время курса?<span class="plus"></span></div>
-        <div class="faq-a">Не голодание. Индивидуальный план под ваш вес, образ жизни и результаты анализов. Расписан так, чтобы можно было соблюдать дома и на работе. Без «только смузи».</div>
+        <div class="faq-a">Не голодание (хотя при показаниях возможно лечебное голодание 1–3 дня под контролем врача). Индивидуальный план под ваш вес, образ жизни и результаты анализов. Расписан так, чтобы можно было соблюдать дома и на работе.</div>
       </div>
 
       <div class="faq-item">
@@ -1470,11 +1543,6 @@
       <div class="faq-item">
         <div class="faq-q">Есть ли гарантия результата?<span class="plus"></span></div>
         <div class="faq-a">Гарантию даём только на качество медицинской работы: на квалификацию врачей, на сертифицированные препараты, на чистоту проведения процедур. Биологический ответ организма гарантировать не может ни одна клиника, и тот, кто это обещает, лукавит.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Как часто нужно приходить в клинику?<span class="plus"></span></div>
-        <div class="faq-a">10 дней подряд, ежедневно. График процедур подбираем под ваш день — есть утренние и вечерние слоты.</div>
       </div>
 
       <div class="faq-item">
@@ -1489,7 +1557,12 @@
 
       <div class="faq-item">
         <div class="faq-q">Когда лучше начинать программу?<span class="plus"></span></div>
-        <div class="faq-a">Когда есть 2 недели на подготовку и 10 дней на курс. После праздников, поездок, длительного приёма лекарств, периода стресса — самые частые моменты обращения.</div>
+        <div class="faq-a">Когда есть 2 недели на подготовку, 10 дней на курс и 2 месяца на восстановление. После праздников, поездок, длительного приёма лекарств, периода стресса — самые частые моменты обращения.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Что входит в восстановление после клиники?<span class="plus"></span></div>
+        <div class="faq-a">2 месяца сопровождения дома: индивидуальные рекомендации по питанию и схема приёма добавок для восстановления микрофлоры. Без этого этапа эффект программы не удержится надолго.</div>
       </div>
     </div>
   </div>
@@ -1630,6 +1703,7 @@
         <ul>
           <li><a href="#includes">Что входит</a></li>
           <li><a href="#stages">Этапы</a></li>
+          <li><a href="#results">Результаты</a></li>
           <li><a href="#prices">Тарифы</a></li>
           <li><a href="#faq">Вопросы</a></li>
         </ul>
