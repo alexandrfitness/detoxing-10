@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Нужна ли мне программа «Детоксинг 10» · Bisharova Clinic</title>
+<meta name="description" content="Короткий квиз: 8 вопросов — и вы понимаете состояние, риски и подходящий вариант программы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;--bg-soft:#FAFAFA;--ink:#0A0A0A;--ink-soft:#1F1F1F;--muted:#6E6E6E;
+    --line:#E4E4E4;--line-soft:#EFEFEF;
+    --green:#2DC64C;--green-dark:#1FA63B;--green-deep:#15812C;
+    --green-glow:rgba(45,198,76,0.18);--green-light:#A8F0B8;
+    --amber:#D4A24A;--amber-bg:rgba(212,162,74,0.07);--amber-border:rgba(212,162,74,0.32);
+    --red:#C44A4A;--red-bg:rgba(196,74,74,0.06);--red-border:rgba(196,74,74,0.28);
+    --dark1:#0E1F12;--dark2:#1A3A22;
+    --tg:#2AABEE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);font-weight:400;line-height:1.55;font-size:16px;background:var(--bg-soft);min-height:100vh}
+
+  /* NAV */
+  nav{position:sticky;top:0;background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);z-index:100}
+  .nav-inner{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  .brand .badge{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-deep));color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:18px;font-weight:800;letter-spacing:-0.02em}
+  .brand .name{font-family:'Inter',sans-serif;font-size:18px;font-weight:800;letter-spacing:-0.015em;color:var(--ink)}
+  .brand .name b{font-weight:800;color:var(--green-dark)}
+  .nav-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-dark);font-weight:700;background:rgba(45,198,76,0.08);border:1px solid rgba(45,198,76,0.3);padding:6px 12px;border-radius:100px}
+
+  /* MAIN */
+  main{max-width:760px;margin:0 auto;padding:36px 20px 80px}
+
+  /* INTRO */
+  .intro{text-align:center;margin-bottom:28px}
+  .intro h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(28px,5vw,42px);line-height:1.05;letter-spacing:-0.025em;color:var(--ink);margin-bottom:12px}
+  .intro h1 em{font-style:normal;color:var(--green-dark);font-weight:800}
+  .intro p{font-size:16px;color:var(--ink-soft);max-width:560px;margin:0 auto;line-height:1.55}
+  .intro .meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-dark);margin-bottom:14px;font-weight:700}
+
+  /* QUIZ CARD */
+  .quiz-card{max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 28px;box-shadow:0 16px 50px rgba(0,0,0,0.05)}
+
+  /* PROGRESS */
+  .progress{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+  .progress-bar{flex:1;height:6px;background:var(--line);border-radius:100px;overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-dark));width:12.5%;transition:width 0.4s ease;border-radius:100px}
+  .progress-text{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;font-weight:700;white-space:nowrap}
+
+  /* QUESTION */
+  .step{display:none}
+  .step.active{display:block;animation:fadeIn 0.3s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  .q-block-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;color:var(--green-dark);text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .q-title{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(22px,3.6vw,30px);line-height:1.15;letter-spacing:-0.018em;color:var(--ink);margin-bottom:10px}
+  .q-title em{font-style:normal;color:var(--green-dark);font-weight:800}
+  .q-hint{font-size:14px;color:var(--muted);margin-bottom:22px}
+
+  .options{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+  .opt{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;background:#fff;font-size:15px;color:var(--ink-soft);text-align:left;font-family:'Inter',sans-serif;line-height:1.4;font-weight:500;transition:all 0.15s;width:100%}
+  .opt:hover{border-color:var(--green-dark);background:rgba(45,198,76,0.04);color:var(--ink)}
+  .opt.selected{border-color:var(--green-dark);background:rgba(45,198,76,0.06);color:var(--ink);box-shadow:0 4px 14px rgba(45,198,76,0.12)}
+  .opt .mark{flex-shrink:0;width:22px;height:22px;border:1.5px solid var(--line);border-radius:50%;position:relative;margin-top:1px;transition:all 0.15s}
+  .opt.selected .mark{border-color:var(--green-dark);background:var(--green)}
+  .opt.selected .mark::after{content:"";position:absolute;top:5px;left:5px;width:8px;height:8px;background:#fff;border-radius:50%}
+  .opt .label{flex:1}
+
+  .nav-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn-back{background:transparent;border:1.5px solid var(--line);color:var(--muted);padding:12px 22px;border-radius:100px;cursor:pointer;font-size:14px;font-family:'Inter',sans-serif;font-weight:500;transition:all 0.15s}
+  .btn-back:hover:not(:disabled){border-color:var(--ink);color:var(--ink)}
+  .btn-back:disabled{opacity:0.35;cursor:not-allowed}
+
+  /* RESULT */
+  .result{display:none}
+  .result.active{display:block;animation:fadeIn 0.4s ease}
+  .result-hero{text-align:center;margin-bottom:28px;padding:24px 8px}
+  .result-hero .badge-status{display:inline-block;padding:8px 18px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+  .result-hero .badge-status.high{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .result-hero .badge-status.med{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
+  .result-hero .badge-status.low{background:rgba(45,198,76,0.08);color:var(--green-dark);border:1px solid rgba(45,198,76,0.32)}
+  .result-hero h2{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(26px,4.5vw,36px);line-height:1.1;letter-spacing:-0.022em;color:var(--ink);margin-bottom:8px}
+  .result-hero h2 em{font-style:normal;color:var(--green-dark);font-weight:800}
+  .result-hero p{font-size:16px;color:var(--ink-soft);max-width:520px;margin:0 auto;line-height:1.55}
+
+  /* CARDS */
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:14px}
+  .card.dark{background:linear-gradient(135deg,var(--dark1) 0%,var(--dark2) 50%,var(--dark1) 100%);color:#fff;border:none;box-shadow:0 16px 40px rgba(0,0,0,0.18)}
+  .card.warn{background:var(--amber-bg);border:1.5px solid var(--amber-border);border-left:5px solid var(--amber)}
+  .card.alert{background:var(--red-bg);border:1.5px solid var(--red-border);border-left:5px solid var(--red)}
+  .card .c-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:var(--green-dark);text-transform:uppercase;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .card.dark .c-num{color:var(--green-light)}
+  .card.warn .c-num{color:var(--amber)}
+  .card.alert .c-num{color:var(--red)}
+  .card .c-num .step{background:currentColor;color:#fff;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;font-family:'Inter',sans-serif}
+  .card.dark .c-num .step{background:var(--green-light);color:var(--dark1)}
+  .card.warn .c-num .step{background:var(--amber);color:#fff}
+  .card.alert .c-num .step{background:var(--red);color:#fff}
+  .card h3{font-family:'Inter',sans-serif;font-weight:800;font-size:22px;line-height:1.2;letter-spacing:-0.015em;color:var(--ink);margin-bottom:10px}
+  .card.dark h3{color:#fff}
+  .card p{font-size:15px;color:var(--ink-soft);line-height:1.55;margin-bottom:8px}
+  .card p:last-child{margin-bottom:0}
+  .card.dark p{color:rgba(255,255,255,0.88)}
+  .card p b{font-weight:700;color:var(--ink)}
+  .card.dark p b{color:#fff}
+  .card ul{margin:8px 0 0;list-style:none}
+  .card ul li{padding:5px 0 5px 18px;position:relative;font-size:14.5px;color:var(--ink-soft);line-height:1.5}
+  .card ul li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;background:var(--green-dark);border-radius:50%}
+  .card.warn ul li::before{background:var(--amber)}
+  .card.alert ul li::before{background:var(--red)}
+  .card.dark ul li{color:rgba(255,255,255,0.88)}
+  .card.dark ul li::before{background:var(--green-light)}
+
+  /* RECOMMENDATION (final card) */
+  .reco-card{background:#fff;border:2px solid var(--green-dark);border-radius:20px;padding:28px;margin:18px 0 14px;text-align:center}
+  .reco-card.dark{background:linear-gradient(135deg,var(--dark1) 0%,var(--dark2) 50%,var(--dark1) 100%);color:#fff;border:none;box-shadow:0 24px 60px rgba(0,0,0,0.22)}
+  .reco-card .reco-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:var(--green-dark);text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .reco-card.dark .reco-label{color:var(--green-light)}
+  .reco-card .reco-name{font-family:'Inter',sans-serif;font-weight:800;font-size:28px;color:var(--ink);margin-bottom:8px;letter-spacing:-0.02em;line-height:1.1}
+  .reco-card.dark .reco-name{color:#fff}
+  .reco-card .reco-price{font-family:'Inter',sans-serif;font-weight:800;font-size:48px;color:var(--ink);letter-spacing:-0.03em;line-height:1;margin-bottom:8px}
+  .reco-card.dark .reco-price{color:#fff}
+  .reco-card .reco-price .rub{font-size:0.5em;color:var(--ink);margin-left:6px;font-weight:600}
+  .reco-card.dark .reco-price .rub{color:var(--amber)}
+  .reco-card .reco-sub{font-size:14px;color:var(--muted);margin-bottom:18px;font-weight:500}
+  .reco-card.dark .reco-sub{color:rgba(255,255,255,0.75)}
+  .reco-card .installment{margin-top:14px;padding:10px 18px;background:rgba(45,198,76,0.08);border:1px solid rgba(45,198,76,0.3);border-radius:100px;display:inline-block;font-size:13px;color:var(--green-deep);font-weight:600}
+  .reco-card.dark .installment{background:rgba(168,240,184,0.12);border-color:rgba(168,240,184,0.3);color:var(--green-light)}
+
+  /* FORM */
+  .form-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:14px}
+  .form-card h3{font-family:'Inter',sans-serif;font-weight:800;font-size:20px;color:var(--ink);margin-bottom:14px;letter-spacing:-0.012em}
+  .form-card form{display:flex;flex-direction:column;gap:10px}
+  .form-card input[type=text],.form-card input[type=tel]{padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-family:'Inter',sans-serif;font-size:15px;outline:none;background:#fff;font-weight:500}
+  .form-card input:focus{border-color:var(--green-dark)}
+  .form-card label.consent{display:flex;gap:10px;font-size:12.5px;color:var(--muted);line-height:1.45;text-align:left;align-items:flex-start;margin:4px 0}
+  .form-card label.consent input{margin-top:3px;flex-shrink:0}
+  .form-card .btn-submit{padding:16px 26px;background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;border:none;border-radius:14px;cursor:pointer;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;letter-spacing:-0.005em;box-shadow:0 12px 28px var(--green-glow);transition:transform 0.15s}
+  .form-card .btn-submit:hover{transform:translateY(-1px)}
+
+  .channels{display:flex;justify-content:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .channels a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:600;line-height:1}
+  .channels a.tg{background:var(--tg);color:#fff}
+  .channels a.phone{background:#fff;border:1.5px solid var(--ink);color:var(--ink)}
+
+  .restart-row{text-align:center;margin-top:20px}
+  .restart-row a{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:0.06em;border-bottom:1px dashed var(--muted);padding-bottom:1px}
+  .restart-row a:hover{color:var(--green-dark);border-color:var(--green-dark)}
+
+  /* FOOTER */
+  footer{max-width:760px;margin:0 auto;padding:20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:var(--muted)}
+  footer a{color:var(--green-dark);text-decoration:none}
+
+  @media (max-width:600px){
+    .quiz-card{padding:24px 18px;border-radius:18px}
+    .opt{padding:14px 16px;font-size:14.5px}
+    main{padding:24px 14px 60px}
+    .card{padding:20px;border-radius:14px}
+    .reco-card{padding:24px 18px}
+    .reco-card .reco-price{font-size:42px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="/detoxing-10/">
+      <div class="badge">B</div>
+      <div class="name">Bisharova <b>Detox</b></div>
+    </a>
+    <div class="nav-tag">Квиз</div>
+  </div>
+</nav>
+
+<main>
+  <!-- ===== INTRO + QUIZ ===== -->
+  <div id="quiz-view">
+    <div class="intro">
+      <div class="meta">8 вопросов · 2 минуты</div>
+      <h1>Нужна ли мне программа <em>«Детоксинг 10»</em>?</h1>
+      <p>Короткая диагностика: пройдите квиз — на выходе увидите своё состояние, реалистичный прогноз и подходящий вариант программы (или альтернативу).</p>
+    </div>
+
+    <div class="quiz-card">
+      <div class="progress">
+        <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
+        <div class="progress-text" id="counter">1 из 8</div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="step active" data-step="1">
+        <div class="q-block-label">Блок А · симптомы</div>
+        <h2 class="q-title">Что беспокоит <em>больше всего?</em></h2>
+        <p class="q-hint">Выберите главную жалобу</p>
+        <div class="options">
+          <button class="opt" data-q="1" data-v="energy"><span class="mark"></span><span class="label">Постоянная усталость, плохой сон</span></button>
+          <button class="opt" data-q="1" data-v="gi"><span class="mark"></span><span class="label">Тяжесть, вздутие, проблемы с ЖКТ</span></button>
+          <button class="opt" data-q="1" data-v="skin"><span class="mark"></span><span class="label">Кожа: акне, высыпания, тусклость</span></button>
+          <button class="opt" data-q="1" data-v="hair"><span class="mark"></span><span class="label">Волосы: выпадение, ломкость</span></button>
+          <button class="opt" data-q="1" data-v="weight"><span class="mark"></span><span class="label">Лишний вес или не уходит</span></button>
+          <button class="opt" data-q="1" data-v="allergy"><span class="mark"></span><span class="label">Аллергии, пищевая непереносимость</span></button>
+          <button class="opt" data-q="1" data-v="immune"><span class="mark"></span><span class="label">Частые ОРВИ, слабый иммунитет</span></button>
+          <button class="opt" data-q="1" data-v="mood"><span class="mark"></span><span class="label">Тревога, раздражительность</span></button>
+          <button class="opt" data-q="1" data-v="many"><span class="mark"></span><span class="label">Несколько проблем сразу</span></button>
+          <button class="opt" data-q="1" data-v="none"><span class="mark"></span><span class="label">Симптомов нет — интересует профилактика</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back" disabled>← Назад</button></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="step" data-step="2">
+        <div class="q-block-label">Блок А · симптомы</div>
+        <h2 class="q-title">Как давно <em>симптомы?</em></h2>
+        <div class="options">
+          <button class="opt" data-q="2" data-v="lt1"><span class="mark"></span><span class="label">Меньше года</span></button>
+          <button class="opt" data-q="2" data-v="1to3"><span class="mark"></span><span class="label">1–3 года</span></button>
+          <button class="opt" data-q="2" data-v="3to5"><span class="mark"></span><span class="label">3–5 лет</span></button>
+          <button class="opt" data-q="2" data-v="gt5"><span class="mark"></span><span class="label">Больше 5 лет / «сколько помню»</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back">← Назад</button></div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="step" data-step="3">
+        <div class="q-block-label">Блок А · симптомы</div>
+        <h2 class="q-title">Как симптомы <em>влияют на жизнь?</em></h2>
+        <div class="options">
+          <button class="opt" data-q="3" data-v="strong"><span class="mark"></span><span class="label">Сильно — мешают работе, настроению, отношениям</span></button>
+          <button class="opt" data-q="3" data-v="med"><span class="mark"></span><span class="label">Умеренно — терпимо, но устал(а) терпеть</span></button>
+          <button class="opt" data-q="3" data-v="low"><span class="mark"></span><span class="label">Слабо — просто неудобство</span></button>
+          <button class="opt" data-q="3" data-v="none"><span class="mark"></span><span class="label">Не влияют</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back">← Назад</button></div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="step" data-step="4">
+        <div class="q-block-label">Блок Б · история</div>
+        <h2 class="q-title">Что уже <em>пробовали?</em></h2>
+        <div class="options">
+          <button class="opt" data-q="4" data-v="nothing"><span class="mark"></span><span class="label">Ничего серьёзного</span></button>
+          <button class="opt" data-q="4" data-v="bads"><span class="mark"></span><span class="label">БАДы, диеты, рекомендации из интернета</span></button>
+          <button class="opt" data-q="4" data-v="docs"><span class="mark"></span><span class="label">Походы по врачам — без чёткого результата</span></button>
+          <button class="opt" data-q="4" data-v="self"><span class="mark"></span><span class="label">Голодания, «чистки» самостоятельно</span></button>
+          <button class="opt" data-q="4" data-v="meds"><span class="mark"></span><span class="label">Длительное лекарственное лечение</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back">← Назад</button></div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="step" data-step="5">
+        <div class="q-block-label">Блок В · цель</div>
+        <h2 class="q-title">Что хотите <em>получить?</em></h2>
+        <div class="options">
+          <button class="opt" data-q="5" data-v="reset"><span class="mark"></span><span class="label">Полную «перезагрузку» — убрать все симптомы</span></button>
+          <button class="opt" data-q="5" data-v="specific"><span class="mark"></span><span class="label">Решить конкретную проблему (вес, кожа, ЖКТ)</span></button>
+          <button class="opt" data-q="5" data-v="prevent"><span class="mark"></span><span class="label">Профилактика, чтобы не запустить</span></button>
+          <button class="opt" data-q="5" data-v="understand"><span class="mark"></span><span class="label">Просто понять, что со мной</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back">← Назад</button></div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="step" data-step="6">
+        <div class="q-block-label">Блок В · готовность</div>
+        <h2 class="q-title">Готовы менять <em>привычки и образ жизни?</em></h2>
+        <div class="options">
+          <button class="opt" data-q="6" data-v="full"><span class="mark"></span><span class="label">Да, готов(а) к серьёзным изменениям</span></button>
+          <button class="opt" data-q="6" data-v="soft"><span class="mark"></span><span class="label">Готов(а), но без жёстких ограничений</span></button>
+          <button class="opt" data-q="6" data-v="procs"><span class="mark"></span><span class="label">Хочу решить процедурами, без диет</span></button>
+          <button class="opt" data-q="6" data-v="no"><span class="mark"></span><span class="label">Не готов(а) — ищу «волшебную таблетку»</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back">← Назад</button></div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="step" data-step="7">
+        <div class="q-block-label">Блок Г · ресурсы</div>
+        <h2 class="q-title">Готовы выделить <em>10 дней на программу?</em></h2>
+        <div class="options">
+          <button class="opt" data-q="7" data-v="yes"><span class="mark"></span><span class="label">Да, полностью</span></button>
+          <button class="opt" data-q="7" data-v="indiv"><span class="mark"></span><span class="label">Сложно с графиком — нужен индивидуальный</span></button>
+          <button class="opt" data-q="7" data-v="short"><span class="mark"></span><span class="label">Только короткий вариант (3–5 дней)</span></button>
+          <button class="opt" data-q="7" data-v="amb"><span class="mark"></span><span class="label">Нет — нужно амбулаторно</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back">← Назад</button></div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="step" data-step="8">
+        <div class="q-block-label">Блок Г · ресурсы</div>
+        <h2 class="q-title">Бюджет на <em>решение проблемы?</em></h2>
+        <div class="options">
+          <button class="opt" data-q="8" data-v="250"><span class="mark"></span><span class="label">250 000 ₽ — готов(а)</span></button>
+          <button class="opt" data-q="8" data-v="350"><span class="mark"></span><span class="label">350 000 ₽ — готов(а) к индивидуальному</span></button>
+          <button class="opt" data-q="8" data-v="install"><span class="mark"></span><span class="label">Нужна рассрочка</span></button>
+          <button class="opt" data-q="8" data-v="diag"><span class="mark"></span><span class="label">Сейчас не готов(а) к большим суммам — начну с диагностики</span></button>
+        </div>
+        <div class="nav-row"><button class="btn-back">← Назад</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESULT VIEW ===== -->
+  <div class="result" id="result-view">
+    <div class="result-hero">
+      <div class="badge-status" id="r-badge">Результат</div>
+      <h2 id="r-title">Ваш персональный <em>отчёт</em></h2>
+      <p id="r-subtitle">На основе ваших ответов мы подготовили рекомендации.</p>
+    </div>
+
+    <!-- 1. Состояние сейчас -->
+    <div class="card" id="card-state">
+      <div class="c-num"><span class="step">1</span>Ваше состояние сейчас</div>
+      <h3 id="state-h">—</h3>
+      <p id="state-p">—</p>
+    </div>
+
+    <!-- 2. Прогноз -->
+    <div class="card" id="card-forecast">
+      <div class="c-num"><span class="step">2</span>Что может быть, если не решать</div>
+      <p id="forecast-intro">—</p>
+      <ul id="forecast-list"></ul>
+    </div>
+
+    <!-- 3. Цель -->
+    <div class="card" id="card-goal">
+      <div class="c-num"><span class="step">3</span>Что вы хотите получить</div>
+      <p id="goal-p">—</p>
+    </div>
+
+    <!-- 4. Готовность -->
+    <div class="card" id="card-ready">
+      <div class="c-num"><span class="step">4</span>Ваша готовность к решению</div>
+      <h3 id="ready-h">—</h3>
+      <p id="ready-p">—</p>
+    </div>
+
+    <!-- 5. Рекомендация -->
+    <div class="reco-card" id="reco-card">
+      <div class="reco-label">Что вам подходит</div>
+      <div class="reco-name" id="reco-name">—</div>
+      <div class="reco-price" id="reco-price">—</div>
+      <div class="reco-sub" id="reco-sub">—</div>
+      <div class="installment" id="installment-note" style="display:none">Доступна беспроцентная рассрочка 6 / 12 мес</div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-card">
+      <h3>Записаться на консультацию</h3>
+      <form id="lead-form" onsubmit="return submitForm(event)">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <label class="consent"><input type="checkbox" required>Согласен на обработку персональных данных (152-ФЗ) и связь по указанному телефону</label>
+        <button type="submit" class="btn-submit">Записаться на консультацию →</button>
+      </form>
+    </div>
+
+    <div class="channels">
+      <a class="phone" href="tel:+79674533767">📞 8 (967) 453-37-67</a>
+      <a class="tg" href="https://t.me/+VxTpPPxuR19hMGFi" target="_blank" rel="noopener">✈ Telegram</a>
+    </div>
+
+    <div class="restart-row">
+      <a href="javascript:location.reload()">пройти квиз заново</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Bisharova Detox · Уфа, ул. Ленина 75, ЖК «Аристократ» · <a href="tel:+79674533767">8 (967) 453-37-67</a>
+</footer>
+
+<script>
+(function(){
+  var answers = {};
+  var total = 8;
+  var current = 1;
+  var quizView = document.getElementById('quiz-view');
+  var resultView = document.getElementById('result-view');
+  var fill = document.getElementById('fill');
+  var counter = document.getElementById('counter');
+  var card = document.querySelector('.quiz-card');
+
+  function showStep(n){
+    document.querySelectorAll('.step').forEach(function(s){ s.classList.remove('active'); });
+    var sel = (n==='result') ? null : document.querySelector('.step[data-step="'+n+'"]');
+    if(sel) sel.classList.add('active');
+    if(n!=='result'){
+      fill.style.width = (n/total*100)+'%';
+      counter.textContent = n+' из '+total;
+      current = n;
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+  }
+
+  function showResult(){
+    renderResult();
+    quizView.style.display = 'none';
+    resultView.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // Click handlers
+  document.addEventListener('click', function(e){
+    var opt = e.target.closest('.opt');
+    if(opt){
+      var q = opt.dataset.q;
+      var v = opt.dataset.v;
+      answers[q] = v;
+      // mark
+      opt.parentElement.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('selected'); });
+      opt.classList.add('selected');
+      setTimeout(function(){
+        var next = parseInt(q,10)+1;
+        if(next>total) showResult();
+        else showStep(next);
+      }, 240);
+      return;
+    }
+    var back = e.target.closest('.btn-back');
+    if(back && !back.disabled){
+      var prev = Math.max(1, current-1);
+      showStep(prev);
+    }
+  });
+
+  // ===== RESULT LOGIC =====
+  function renderResult(){
+    var a = answers;
+
+    // SCORING
+    // Severity: based on Q1 (which symptom), Q2 (duration), Q3 (impact)
+    var sevScore = 0;
+    if(a['1']==='many') sevScore += 3;
+    else if(a['1']==='none') sevScore += 0;
+    else sevScore += 1;
+    if(a['2']==='gt5') sevScore += 3;
+    else if(a['2']==='3to5') sevScore += 2;
+    else if(a['2']==='1to3') sevScore += 1;
+    if(a['3']==='strong') sevScore += 3;
+    else if(a['3']==='med') sevScore += 2;
+    else if(a['3']==='low') sevScore += 1;
+
+    // sevScore range: 0-9
+    // High: 6-9; Med: 3-5; Low: 0-2
+    var sevLevel = sevScore>=6 ? 'high' : (sevScore>=3 ? 'med' : 'low');
+    if(a['1']==='none') sevLevel = 'none';
+
+    // Readiness: Q6 + Q7 + Q8
+    var readyScore = 0;
+    if(a['6']==='full') readyScore += 2; else if(a['6']==='soft') readyScore += 1;
+    if(a['7']==='yes') readyScore += 2; else if(a['7']==='indiv') readyScore += 1;
+    if(a['8']==='250' || a['8']==='350') readyScore += 2;
+    else if(a['8']==='install') readyScore += 1;
+    // 0-6
+    var readyLevel = readyScore>=5 ? 'high' : (readyScore>=2 ? 'med' : 'low');
+
+    // ===== HERO =====
+    var badge = document.getElementById('r-badge');
+    var title = document.getElementById('r-title');
+    var sub = document.getElementById('r-subtitle');
+    if(sevLevel==='high'){
+      badge.className = 'badge-status high';
+      badge.textContent = 'Высокая нагрузка';
+      title.innerHTML = 'Симптомы накопились — <em>пора действовать</em>';
+      sub.textContent = 'Уровень симптомов и их длительность указывают на серьёзную нагрузку. Чем дольше откладывать, тем труднее восстановиться.';
+    } else if(sevLevel==='med'){
+      badge.className = 'badge-status med';
+      badge.textContent = 'Средняя нагрузка';
+      title.innerHTML = 'Хронические сигналы — <em>стоит разобраться</em>';
+      sub.textContent = 'Организм даёт устойчивые сигналы. Хорошее время не запустить и понять источник.';
+    } else if(sevLevel==='low'){
+      badge.className = 'badge-status low';
+      badge.textContent = 'Лёгкие сигналы';
+      title.innerHTML = 'Лёгкие симптомы — <em>профилактика на максимуме</em>';
+      sub.textContent = 'Симптомы пока выражены слабо — самое время разобраться с причинами и не дать им развиться.';
+    } else {
+      badge.className = 'badge-status low';
+      badge.textContent = 'Профилактика';
+      title.innerHTML = 'Симптомов нет — <em>хороший момент для чек-апа</em>';
+      sub.textContent = 'Это идеальная позиция: можно увидеть скрытые риски до того, как они станут проблемами.';
+    }
+
+    // ===== 1. STATE =====
+    var stateH = document.getElementById('state-h');
+    var stateP = document.getElementById('state-p');
+    var symptomMap = {
+      energy:'Постоянная усталость и плохой сон',
+      gi:'Тяжесть, вздутие и нарушения ЖКТ',
+      skin:'Проблемы с кожей — акне, высыпания, тусклость',
+      hair:'Проблемы с волосами — выпадение, ломкость',
+      weight:'Сложности с весом',
+      allergy:'Аллергии и пищевая непереносимость',
+      immune:'Снижение иммунитета, частые ОРВИ',
+      mood:'Тревога, раздражительность',
+      many:'Несколько хронических проблем одновременно',
+      none:'Сейчас выраженных симптомов нет'
+    };
+    var durationMap = {lt1:'меньше года','1to3':'от 1 до 3 лет','3to5':'3–5 лет',gt5:'больше 5 лет'};
+    var impactMap = {strong:'сильно влияют на качество жизни',med:'умеренно влияют, но устали терпеть',low:'влияют слабо',none:'не влияют'};
+    stateH.textContent = symptomMap[a['1']] || '—';
+    if(a['1']==='none'){
+      stateP.innerHTML = 'Вы пришли за профилактикой. Это редкий и сознательный выбор — проверить состояние до того, как появятся симптомы.';
+    } else {
+      stateP.innerHTML = 'Длительность: <b>' + (durationMap[a['2']]||'') + '</b>. Симптомы ' + (impactMap[a['3']]||'') + '. ' +
+        (sevLevel==='high' ? 'Это уже не «временное недомогание» — это устойчивая нагрузка на организм, требующая комплексного подхода.' :
+         sevLevel==='med' ? 'Это хронический паттерн — без вмешательства симптомы редко уходят сами.' :
+         'Это сигналы, но пока умеренные — есть пространство для манёвра.');
+    }
+
+    // ===== 2. FORECAST =====
+    var fIntro = document.getElementById('forecast-intro');
+    var fList = document.getElementById('forecast-list');
+    fList.innerHTML = '';
+    if(sevLevel==='high'){
+      fIntro.innerHTML = 'При <b>длительном сохранении текущих симптомов</b> без диагностики и работы с причиной риски повышены:';
+      ['Хронические заболевания ЖКТ (гастрит, холецистит, дискинезия желчных путей)',
+       'Желчекаменная болезнь и необходимость хирургического вмешательства',
+       'Стойкое снижение иммунитета и частые инфекции',
+       'Метаболические нарушения, рост веса, инсулинорезистентность',
+       'Ускорение «биологического» старения — кожа, волосы, тонус мышц'].forEach(function(t){
+        var li = document.createElement('li'); li.textContent = t; fList.appendChild(li);
+      });
+    } else if(sevLevel==='med'){
+      fIntro.innerHTML = 'Если ничего не менять — со временем возможно:';
+      ['Усиление и появление новых симптомов',
+       'Формирование хронических заболеваний ЖКТ через 2–5 лет',
+       'Снижение работоспособности и качества жизни'].forEach(function(t){
+        var li = document.createElement('li'); li.textContent = t; fList.appendChild(li);
+      });
+    } else if(sevLevel==='low'){
+      fIntro.innerHTML = 'Сейчас риски умеренные, но <b>симптомы редко проходят сами</b>:';
+      ['При накоплении факторов (стресс, питание, экология) могут усилиться',
+       'Через 5–10 лет могут стать хроническими диагнозами',
+       'Лучшее время — разобраться сейчас, когда «откатить» легче'].forEach(function(t){
+        var li = document.createElement('li'); li.textContent = t; fList.appendChild(li);
+      });
+    } else {
+      fIntro.innerHTML = 'У профилактического подхода практически нет рисков — он выявляет скрытые отклонения до того, как они станут проблемой.';
+    }
+
+    // ===== 3. GOAL =====
+    var goalP = document.getElementById('goal-p');
+    var goalMap = {
+      reset:'Вы хотите комплексную <b>«перезагрузку»</b> — чтобы все симптомы ушли, и тело снова работало без сбоев. Это реалистичная цель при правильно подобранной программе.',
+      specific:'Вы хотите <b>решить конкретную проблему</b>. Это рабочий подход — но важно понимать, что у частной проблемы (например, лишний вес или кожа) часто есть системная причина (ЖКТ, желчь, токсическая нагрузка).',
+      prevent:'Вы хотите <b>не запустить</b> ситуацию. Это самый зрелый запрос — большинство приходит уже с симптомами.',
+      understand:'Вы хотите <b>понять, что с вами происходит</b>. Для этого нужна диагностика — анализ желчи, копрограмма, базовый чек-ап. Без понимания причины — лечение наугад.'
+    };
+    goalP.innerHTML = goalMap[a['5']] || '—';
+
+    // ===== 4. READINESS =====
+    var readyH = document.getElementById('ready-h');
+    var readyP = document.getElementById('ready-p');
+    if(readyLevel==='high'){
+      readyH.textContent = 'Высокая';
+      readyP.innerHTML = 'Вы готовы к серьёзным изменениям, можете выделить время и ресурсы. Это <b>самый эффективный сценарий</b> — программа даёт максимум при таком уровне вовлечённости.';
+    } else if(readyLevel==='med'){
+      readyH.textContent = 'Средняя';
+      readyP.innerHTML = 'Готовность частичная — есть ограничения по графику, бюджету или мотивации. Это не блокер, но <b>имеет смысл выбрать формат под себя</b> (индивидуальный, рассрочка, или сначала диагностика).';
+    } else {
+      readyH.textContent = 'Низкая';
+      var notReady = a['6']==='no' || a['6']==='procs';
+      readyP.innerHTML = (notReady ?
+        '<b>Честно:</b> программа очищения сама по себе не даёт «волшебной» перезагрузки, если после неё вы возвращаетесь к прежним привычкам питания и образа жизни. Эффект будет частичным и временным.<br><br>' : '') +
+        'Сейчас разумно <b>начать с диагностики</b> — чек-апа за 15 000 ₽. Это даст ясную картину состояния и поможет принять решение без давления.';
+    }
+
+    // ===== 5. RECOMMENDATION =====
+    var rCard = document.getElementById('reco-card');
+    var rName = document.getElementById('reco-name');
+    var rPrice = document.getElementById('reco-price');
+    var rSub = document.getElementById('reco-sub');
+    var installNote = document.getElementById('installment-note');
+
+    var recommendation = 'checkup'; // default
+    if(a['8']==='diag' || a['1']==='none' || a['5']==='understand' || readyLevel==='low' || sevLevel==='low' || sevLevel==='none'){
+      recommendation = 'checkup';
+    } else if(a['7']==='indiv' || (sevLevel==='high' && a['8']==='350')){
+      recommendation = 'indiv';
+    } else if(a['7']==='yes' && (a['8']==='250' || a['8']==='install') && (sevLevel==='high' || sevLevel==='med')){
+      recommendation = 'group';
+    } else if(sevLevel==='high' || sevLevel==='med'){
+      recommendation = 'group';
+    }
+
+    if(recommendation==='indiv'){
+      rCard.classList.add('dark');
+      rName.textContent = 'Индивидуальная программа';
+      rPrice.innerHTML = '350 000<span class="rub">₽</span>';
+      rSub.textContent = '10 дней · 1 место · отдельная ВИП-комната · капельница NAD+ · гибкий график';
+    } else if(recommendation==='group'){
+      rCard.classList.remove('dark');
+      rCard.style.borderColor = 'var(--green-dark)';
+      rName.innerHTML = 'Групповая программа <span style="font-size:13px;background:var(--green-dark);color:#fff;padding:3px 10px;border-radius:100px;letter-spacing:0.08em;text-transform:uppercase;vertical-align:middle;margin-left:6px;font-weight:700">популярное</span>';
+      rPrice.innerHTML = '250 000<span class="rub">₽</span>';
+      rSub.textContent = '10 дней · группа до 7 человек · все процедуры';
+    } else { // checkup
+      rCard.classList.remove('dark');
+      rName.textContent = 'Чек-ап — начните с диагностики';
+      rPrice.innerHTML = '15 000<span class="rub">₽</span>';
+      rSub.textContent = 'Полное исследование за 1 день · 9:00–12:00 · результаты через 1–3 дня';
+    }
+
+    if(a['8']==='install'){
+      installNote.style.display = 'inline-block';
+    }
+
+    // store recommendation for form submission
+    window._reco = {
+      type: recommendation,
+      name: rName.textContent.replace(/\s+популярное/i,'').trim(),
+      sev: sevLevel,
+      ready: readyLevel,
+      answers: a
+    };
+  }
+
+  // ===== FORM =====
+  window.submitForm = function(e){
+    e.preventDefault();
+    var f = e.target;
+    var name = f.elements['name'].value;
+    var phone = f.elements['phone'].value;
+    var reco = window._reco || {};
+    alert('Спасибо, ' + name + '! Мы свяжемся с вами по телефону ' + phone + ' в течение дня.\n\nРекомендация: ' + (reco.name||''));
+    setTimeout(function(){ window.open('https://t.me/+VxTpPPxuR19hMGFi','_blank'); }, 300);
+    return false;
+  };
+})();
+</script>
+
+</body>
+</html>
