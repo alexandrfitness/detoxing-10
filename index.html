@@ -152,36 +152,6 @@
   .price-card.featured li::before{color:#fff;opacity:0.8}
   .price-card .btn{width:100%;justify-content:center}
 
-  /* === PRICING — GOLD (Индивидуально) — glossy === */
-  .price-card.gold{
-    background:
-      linear-gradient(135deg,#FFF1B0 0%,#F2D165 20%,#E0BC42 48%,#C49E26 76%,#8A6E16 100%);
-    border:none;color:#fff;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.7) inset,
-      0 -10px 22px rgba(120,90,15,0.22) inset,
-      0 24px 50px rgba(220,180,55,0.45),
-      0 6px 16px rgba(0,0,0,0.16);
-    overflow:hidden}
-  /* top wide highlight */
-  .price-card.gold::before{content:"";position:absolute;top:0;left:0;right:0;height:55%;
-    background:linear-gradient(180deg,rgba(255,255,255,0.55) 0%,rgba(255,255,255,0.10) 55%,transparent 100%);
-    pointer-events:none;z-index:1}
-  /* diagonal sheen */
-  .price-card.gold::after{content:"";position:absolute;top:-20%;left:-30%;width:80%;height:160%;
-    background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,0.32) 50%,transparent 65%);
-    transform:rotate(8deg);pointer-events:none;z-index:1;filter:blur(2px)}
-  .price-card.gold .tag{color:rgba(255,255,255,0.95);opacity:0.95;text-shadow:0 1px 2px rgba(0,0,0,0.15)}
-  .price-card.gold .price{color:var(--ink);text-shadow:0 1px 0 rgba(255,255,255,0.55)}
-  .price-card.gold .days{border-bottom-color:rgba(255,255,255,0.28)}
-  .price-card.gold li{opacity:0.96;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.12)}
-  .price-card.gold li::before{color:#fff;opacity:0.95}
-  .price-card.gold .pc-section-title{color:#fff;opacity:0.94;text-shadow:0 1px 1px rgba(0,0,0,0.12)}
-  .price-card.gold ul.out li{color:#fff}
-  .price-card.gold ul.out li::before{color:#fff;opacity:0.7}
-  .price-card.gold .pc-details summary{color:#fff;border-color:rgba(255,255,255,0.28);text-shadow:0 1px 1px rgba(0,0,0,0.12)}
-  .price-card.gold .btn.btn-ink{background:rgba(255,255,255,0.96);color:var(--ink);border:none}
-  .price-card.gold .btn.btn-ink:hover{background:#fff}
 
   /* === CONTACTS === */
   .contacts{padding:120px 0 80px;text-align:center;background:linear-gradient(180deg,transparent,rgba(45,198,76,0.04))}
@@ -957,9 +927,9 @@
         </div>
       </div>
 
-      <div class="price-card gold">
+      <div class="price-card">
         <div class="price-card-content">
-          <div class="tag">Индивидуально · VIP</div>
+          <div class="tag">Индивидуально</div>
           <div class="price">350 000 ₽</div>
           <div class="days">10 дней · 1 место</div>
           <details class="pc-details">
