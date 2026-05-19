@@ -54,6 +54,9 @@
   .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-dark);margin-bottom:24px;font-weight:500}
   .hero .kicker{color:#A8F0B8;text-shadow:0 2px 12px rgba(0,0,0,0.9),0 1px 2px rgba(0,0,0,0.8);margin-bottom:10px}
   .hero-addr{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;color:rgba(255,255,255,0.88);margin-bottom:24px;text-shadow:0 2px 12px rgba(0,0,0,0.9),0 1px 2px rgba(0,0,0,0.85);line-height:1.5;max-width:520px}
+  .hero-meta{position:absolute;top:120px;right:48px;text-align:right;z-index:3}
+  .hero-meta .kicker{margin-bottom:6px}
+  .hero-meta .hero-addr{margin-bottom:0;font-size:13px}
   .hero h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,7vw,88px);line-height:0.95;letter-spacing:-0.025em;margin-bottom:28px;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,0.85),0 2px 6px rgba(0,0,0,0.75),0 1px 2px rgba(0,0,0,0.9)}
   .hero h1 em{font-style:italic;color:#A8F0B8}
   .hero .lead{font-size:18px;color:#fff;line-height:1.6;margin-bottom:36px;max-width:520px;text-shadow:0 2px 14px rgba(0,0,0,0.9),0 1px 3px rgba(0,0,0,0.85)}
@@ -170,10 +173,13 @@
     .wrap{padding:0 20px}
     .nav-inner{padding:14px 20px}
     .nav-links a:not(.nav-cta){display:none}
-    .hero{padding:100px 20px 80px;min-height:100vh}
+    .hero{padding:170px 20px 80px;min-height:100vh;align-items:flex-start}
     .hero-grid,.about-grid{grid-template-columns:1fr;gap:40px}
     .hero .lead{max-width:none}
     .hero-badge{bottom:24px;right:20px;left:20px;text-align:center}
+    .hero-meta{position:absolute;top:78px;right:20px;text-align:right;z-index:3;max-width:60%}
+    .hero-meta .kicker{margin-bottom:4px;font-size:9.5px;letter-spacing:0.14em}
+    .hero-meta .hero-addr{font-size:10px;line-height:1.45;letter-spacing:0.04em;margin-bottom:0}
     .nav-phone{font-size:12px}
     .nav-tg{padding:7px 12px;font-size:11px}
     .nav-actions{gap:8px}
@@ -420,11 +426,13 @@
 <!-- HERO -->
 <section class="hero">
   <div class="gloss-bg"></div>
+  <div class="hero-meta">
+    <div class="kicker">Bisharova Detox · Уфа</div>
+    <div class="hero-addr">ул. Ленина 75 · ЖК «Аристократ»<br>ежедневно 9:00–15:00</div>
+  </div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="kicker">Bisharova Detox · Уфа</div>
-        <div class="hero-addr">ул. Ленина 75 · ЖК «Аристократ» · ежедневно 9:00–15:00</div>
         <h1>Детоксинг 10 —<br>путь к <em>лёгкости</em>&nbsp;</h1>
         <p class="lead">10-дневная программа восстановления организма с поддержкой врачей клиники. Работаем с печенью, желчевыводящими путями и ЖКТ.</p>
         <div class="hero-buttons">
