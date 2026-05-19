@@ -422,6 +422,14 @@
     </div>
   </div>
 </nav>
+<script>
+  document.querySelectorAll('.nav-menu-inner a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.querySelector('.nav-menu').classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
 
 <!-- HERO -->
 <section class="hero">
