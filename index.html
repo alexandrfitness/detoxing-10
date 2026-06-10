@@ -741,11 +741,10 @@
           <div class="quiz-rec" id="quizRec">Рекомендация</div>
           <h3 id="quizTitle">Подобрали <em>программу</em></h3>
           <p id="quizText">Оставьте контакты — врач свяжется с вами, уточнит детали и подтвердит, что подобранный формат вам подходит.</p>
-          <form class="quiz-result-form" onsubmit="event.preventDefault(); var n=this.elements['name'].value; var p=this.elements['phone'].value; var rec=document.getElementById('quizRec').textContent; alert('Спасибо, '+n+'! Мы свяжемся с вами по номеру '+p+'.\n\nДля быстрой связи нажмите OK — откроется наш Telegram.'); window.open('https://t.me/bbk_bisharovaclinic', '_blank');">
+          <form class="quiz-result-form" data-d10-src="Квиз на лендинге" onsubmit="return d10Submit(this, event)">
             <input type="text" name="name" placeholder="Ваше имя" required>
             <input type="tel" name="phone" placeholder="Телефон" required>
-            <label class="quiz-consent"><input type="checkbox" required>Согласен на обработку персональных данных (152-ФЗ)</label>
-            <label class="consent"><input type="checkbox" required name="pd_consent"> Нажимая кнопку, я даю <a href="legal/personal.html" target="_blank">согласие</a> на обработку моих персональных данных в соответствии с <a href="legal/politika.html" target="_blank">Политикой конфиденциальности</a></label>
+            <div class="consent"><input type="checkbox" required name="pd_consent" id="pdc1"><span><label for="pdc1">Нажимая кнопку, я даю</label> <a href="/detoxing_10/legal/personal.html" target="_blank" rel="noopener">согласие</a> <label for="pdc1">на обработку моих персональных данных в соответствии с</label> <a href="/detoxing_10/legal/politika.html" target="_blank" rel="noopener">Политикой конфиденциальности</a></span></div>
 <button type="submit" class="btn btn-glossy">Получить рекомендацию <span class="arrow">→</span></button>
           </form>
         </div>
@@ -915,12 +914,11 @@
           <li>Чек-лист готовности к 1-му дню программы</li>
         </ul>
       </div>
-      <form class="pdf-form" onsubmit="event.preventDefault(); var e=this.elements['email'].value; alert('Спасибо! Гайд отправим на '+e+'.\n\nДля быстрой связи нажмите OK — откроется наш Telegram.'); window.open('https://t.me/bbk_bisharovaclinic', '_blank');">
+      <form class="pdf-form" data-d10-src="Запрос PDF-гайда" onsubmit="return d10Submit(this, event)">
         <div class="pdf-badge">★ Получить за 1 минуту</div>
         <h3>Отправим на ваш email</h3>
         <input type="email" name="email" placeholder="Email для получения PDF" required>
-        <label class="pdf-consent"><input type="checkbox" required>Согласен на обработку персональных данных (152-ФЗ) и получение PDF-гайда на указанный email</label>
-        <label class="consent"><input type="checkbox" required name="pd_consent"> Нажимая кнопку, я даю <a href="legal/personal.html" target="_blank">согласие</a> на обработку моих персональных данных в соответствии с <a href="legal/politika.html" target="_blank">Политикой конфиденциальности</a></label>
+        <div class="consent"><input type="checkbox" required name="pd_consent" id="pdc2"><span><label for="pdc2">Нажимая кнопку, я даю</label> <a href="/detoxing_10/legal/personal.html" target="_blank" rel="noopener">согласие</a> <label for="pdc2">на обработку моих персональных данных в соответствии с</label> <a href="/detoxing_10/legal/politika.html" target="_blank" rel="noopener">Политикой конфиденциальности</a></span></div>
 <button type="submit" class="btn btn-glossy">Получить PDF-гайд <span class="arrow">→</span></button>
       </form>
     </div>
@@ -1320,11 +1318,10 @@
 
     <!-- FORM: until Formspree endpoint is wired, form redirects to Telegram.
          To switch to Formspree: change action to "https://formspree.io/f/YOUR_ID" and method to "POST", remove onsubmit. -->
-    <form class="contact-form" onsubmit="event.preventDefault(); var n=this.elements['name'].value; var p=this.elements['phone'].value; alert('Спасибо, '+n+'! Мы свяжемся с вами по номеру '+p+'.\n\nДля быстрой связи нажмите OK — откроется наш Telegram.'); window.open('https://t.me/bbk_bisharovaclinic', '_blank');">
+    <form class="contact-form" data-d10-src="Контактная форма" onsubmit="return d10Submit(this, event)">
       <input type="text" name="name" placeholder="Ваше имя" required>
       <input type="tel" name="phone" placeholder="Телефон" required>
-      <label style="font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;line-height:1.45;text-align:left;margin:6px 0 4px"><input type="checkbox" required style="margin-top:3px;flex-shrink:0">Согласен на обработку персональных данных (152-ФЗ) и получение информационных сообщений</label>
-      <label class="consent"><input type="checkbox" required name="pd_consent"> Нажимая кнопку, я даю <a href="legal/personal.html" target="_blank">согласие</a> на обработку моих персональных данных в соответствии с <a href="legal/politika.html" target="_blank">Политикой конфиденциальности</a></label>
+      <div class="consent"><input type="checkbox" required name="pd_consent" id="pdc3"><span><label for="pdc3">Нажимая кнопку, я даю</label> <a href="/detoxing_10/legal/personal.html" target="_blank" rel="noopener">согласие</a> <label for="pdc3">на обработку моих персональных данных в соответствии с</label> <a href="/detoxing_10/legal/politika.html" target="_blank" rel="noopener">Политикой конфиденциальности</a></span></div>
 <button type="submit" class="btn btn-glossy" style="justify-content:center">Отправить заявку <span class="arrow">→</span></button>
     </form>
 
@@ -1361,13 +1358,13 @@
       <div>
         <h4>Документы</h4>
         <ul>
-          <li><a href="legal/docs.html">Документы</a></li>
-          <li><a href="legal/docs.html#norm_doc">Нормативные документы</a></li>
-          <li><a href="legal/nadzor.html">Надзорные органы</a></li>
+          <li><a href="/detoxing_10/legal/docs.html">Документы</a></li>
+          <li><a href="/detoxing_10/legal/docs.html#norm_doc">Нормативные документы</a></li>
+          <li><a href="/detoxing_10/legal/nadzor.html">Надзорные органы</a></li>
           <li><a href="#pricing">Цены</a></li>
-          <li><a href="legal/gosgarantii.html">Государственные гарантии</a></li>
-          <li><a href="legal/politika.html">Политика конфиденциальности</a></li>
-          <li><a href="legal/personal.html">Персональные данные</a></li>
+          <li><a href="/detoxing_10/legal/gosgarantii.html">Государственные гарантии</a></li>
+          <li><a href="/detoxing_10/legal/politika.html">Политика конфиденциальности</a></li>
+          <li><a href="/detoxing_10/legal/personal.html">Персональные данные</a></li>
         </ul>
       </div>
       <div>
@@ -1390,7 +1387,7 @@
 </footer>
 
 <div class="cookiebar" id="cookiebar" hidden>
-  <span>Мы используем cookies. Продолжая пользоваться сайтом, вы даёте согласие на обработку данных в соответствии с <a href="legal/politika.html" target="_blank">Политикой конфиденциальности</a>.</span>
+  <span>Мы используем cookies. Продолжая пользоваться сайтом, вы даёте согласие на обработку данных в соответствии с <a href="/detoxing_10/legal/politika.html" target="_blank">Политикой конфиденциальности</a>.</span>
   <button onclick="localStorage.setItem('d10_cookie_ok','1');document.getElementById('cookiebar').hidden=true">Принимаю</button>
 </div>
 <script>if(!localStorage.getItem('d10_cookie_ok')){document.getElementById('cookiebar').hidden=false}</script>
@@ -1475,6 +1472,59 @@
     }
   });
 })();
+</script>
+
+
+<script>
+/* Отправка заявок в Fluent Forms (форма 4) основного сайта */
+function d10Submit(form, ev){
+  ev.preventDefault();
+  var btn = form.querySelector('button[type="submit"], button');
+  var old = btn ? btn.textContent : '';
+  if(btn){ btn.disabled = true; btn.textContent = 'Отправляем…'; }
+
+  var name  = form.elements['name']  ? form.elements['name'].value  : '';
+  var phone = form.elements['phone'] ? form.elements['phone'].value : '';
+  var email = form.elements['email'] ? form.elements['email'].value : '';
+  var src   = form.getAttribute('data-d10-src') || 'Лендинг';
+  var desc  = src;
+  var rec = document.getElementById('quizRec');
+  if(form.classList.contains('quiz-result-form') && rec){ desc = src + ' · Рекомендация: ' + rec.textContent; }
+
+  var data = 'names%5Bfirst_name%5D=' + encodeURIComponent(name) +
+    '&input_mask=' + encodeURIComponent(phone) +
+    '&email=' + encodeURIComponent(email) +
+    '&description=' + encodeURIComponent(desc) +
+    '&gdpr-agreement=on' +
+    '&wjaxmk8812=' + Math.floor(100000 + Math.random()*899999) +
+    '&alt_s=';
+
+  var body = new URLSearchParams();
+  body.set('action', 'fluentform_submit');
+  body.set('form_id', '4');
+  body.set('data', data);
+
+  fetch('https://bisharova.com/wp-admin/admin-ajax.php', { method:'POST', body: body })
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      if(j && j.success){
+        form.innerHTML = '<div style="padding:18px 6px;text-align:center">' +
+          '<div style="font-size:34px;line-height:1;margin-bottom:10px">✅</div>' +
+          '<div style="font-weight:700;font-size:16px;margin-bottom:6px">Заявка отправлена!</div>' +
+          '<div style="font-size:13.5px;opacity:.8;margin-bottom:14px">Мы свяжемся с вами в ближайшее время.</div>' +
+          '<a href="https://t.me/bbk_bisharovaclinic" target="_blank" rel="noopener" style="display:inline-block;padding:10px 18px;border-radius:10px;background:#2AABEE;color:#fff;text-decoration:none;font-size:13.5px">Написать в Telegram</a></div>';
+      } else {
+        var msg = (j && j.data && (j.data.errors && JSON.stringify(j.data.errors) || j.data.message)) || 'Ошибка отправки';
+        alert('Не удалось отправить: ' + msg + '\nПозвоните нам: +7 967 453-37-67');
+        if(btn){ btn.disabled = false; btn.textContent = old; }
+      }
+    })
+    .catch(function(){
+      alert('Сеть недоступна. Позвоните нам: +7 967 453-37-67');
+      if(btn){ btn.disabled = false; btn.textContent = old; }
+    });
+  return false;
+}
 </script>
 
 </body>
