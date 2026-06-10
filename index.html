@@ -143,9 +143,14 @@
   .cookiebar a{color:var(--green-dark)}
   .cookiebar button{background:var(--green-dark);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;cursor:pointer}
   /* consent checkbox */
-  .consent{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:var(--muted);line-height:1.5;margin:10px 0 4px;text-align:left}
-  .consent input{margin-top:2px;accent-color:var(--green-dark);flex-shrink:0}
+  .consent{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:var(--muted);line-height:1.5;margin:10px 0 4px;text-align:left;width:100%;max-width:100%}
+  .consent input[type="checkbox"]{width:16px !important;height:16px;min-width:16px;flex:none;margin:2px 0 0 !important;padding:0 !important;accent-color:var(--green-dark);appearance:auto;-webkit-appearance:checkbox;border-radius:3px;background:none !important;border:none}
+  .consent span{flex:1 1 auto;min-width:0}
+  .consent label{display:inline;cursor:pointer}
   .consent a{color:var(--green-dark)}
+  .pdf-form .consent{color:rgba(255,255,255,0.7)}
+  .pdf-form .consent a{color:#A8F0B8}
+  .pdf-form .consent input[type="checkbox"]{accent-color:#A8F0B8}
 
   /* === GALLERY === */
   .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
