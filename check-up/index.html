@@ -25,6 +25,20 @@
   main{max-width:680px;margin:0 auto;padding:20px 14px 40px}
   .card-page{background:#fff;border-radius:20px;padding:24px 22px;box-shadow:0 16px 50px rgba(0,0,0,0.05)}
 
+
+  /* WHY / RESULT blocks */
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-dark);font-weight:700;margin:22px 0 10px}
+  .why-list{display:flex;flex-direction:column;gap:8px;margin-bottom:4px}
+  .why{display:flex;gap:11px;align-items:flex-start;background:var(--bg-soft);border:1.5px solid var(--line);border-left:4px solid var(--green-dark);border-radius:11px;padding:11px 14px}
+  .why .n{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .why b{display:block;font-size:14px;letter-spacing:-0.01em;margin-bottom:1px}
+  .why p{font-size:12.5px;color:var(--muted);line-height:1.45}
+  .result-box{background:linear-gradient(135deg,var(--dark1),var(--dark2));color:#fff;border-radius:14px;padding:14px 18px;margin:14px 0 4px}
+  .result-box .lbl2{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-light);font-weight:700;margin-bottom:6px}
+  .result-box p{font-size:13.5px;line-height:1.5}
+  .result-box b{color:var(--green-light)}
+  .promo-deadline{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-top:8px}
+
   /* HEADER */
   .lh{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:2px solid var(--green-dark);margin-bottom:22px}
   .brand{display:flex;align-items:center;gap:12px}
@@ -105,6 +119,16 @@
 
     <h1>Чек-ап перед очищением <em>организма</em></h1>
 
+
+    <div class="sec-label">Зачем нужен чек-ап</div>
+    <div class="why-list">
+      <div class="why"><div class="n">1</div><div><b>Очищение «вслепую» не работает</b><p>Прежде чем чистить организм, нужно увидеть, что в нём происходит: паразиты, застой желчи, дисбактериоз, скрытое воспаление, дефициты.</p></div></div>
+      <div class="why"><div class="n">2</div><div><b>Безопасность</b><p>Чек-ап выявляет противопоказания (камни в желчном, воспаления ЖКТ) — до того, как вы начнёте любые процедуры.</p></div></div>
+      <div class="why"><div class="n">3</div><div><b>Персональный план</b><p>По результатам врач подбирает, что нужно именно вам: мягкая разгрузка или полное очищение, и какие растворы использовать.</p></div></div>
+      <div class="why"><div class="n">4</div><div><b>Точка отсчёта</b><p>Зафиксируем состояние «до» — после очищения вы увидите разницу в цифрах анализов, а не на словах.</p></div></div>
+    </div>
+
+    <div class="sec-label">Что входит</div>
     <ul class="check-list">
       <li><span class="ic">✓</span><span class="txt">Исследование желчи</span></li>
       <li><span class="ic">✓</span><span class="txt">Копрограмма</span></li>
@@ -118,6 +142,12 @@
       <p>Всё делается <b>в один день</b> с 9:00 до 14:00 у нас в клинике. Готовность результатов — <b>1–3 дня</b>.</p>
     </div>
 
+
+    <div class="result-box">
+      <div class="lbl2">Что вы получите</div>
+      <p>Через 1–3 дня — <b>личный разбор результатов с врачом</b>: полная картина по ЖКТ, желчи и дефицитам + письменные рекомендации, что делать дальше. Это не просто анализы на руки — это понятный план действий.</p>
+    </div>
+
     <div class="promo">
       <div class="badge-promo">★ Акция · скидка 15%</div>
       <div class="promo-title">Полный чек-ап</div>
@@ -125,6 +155,7 @@
         <div class="promo-new">33 150<span class="rub">₽</span></div>
         <div class="promo-old">39 000 ₽</div>
       </div>
+      <div class="promo-deadline">⏳ Скидка действует при записи до 30 июня</div>
     </div>
 
     <div class="cta-row">
