@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Подготовка к программе Детоксинг 10 — A4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;--bg-soft:#FAFAFA;--ink:#0A0A0A;--ink-soft:#1F1F1F;--muted:#6E6E6E;
+    --line:#E4E4E4;--line-soft:#EFEFEF;
+    --green:#2DC64C;--green-dark:#1FA63B;--green-deep:#15812C;
+    --green-glow:rgba(45,198,76,0.18);--green-light:#A8F0B8;
+    --amber:#D4A24A;--amber-bg:rgba(212,162,74,0.07);--amber-border:rgba(212,162,74,0.36);
+    --red:#C44A4A;--red-bg:rgba(196,74,74,0.06);--red-border:rgba(196,74,74,0.28);
+    --dark1:#0E1F12;--dark2:#1A3A22;
+  }
+  @page{size:A4;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#fff}
+  body{font-family:'Inter',sans-serif;color:var(--ink);font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.5}
+
+  .page{width:210mm;height:297mm;padding:10mm 18mm;background:#fff;position:relative;overflow:hidden;page-break-after:always}
+  .page:last-child{page-break-after:auto}
+
+  /* HEADER */
+  .lh{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:2px solid var(--green-dark);margin-bottom:14px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand .badge{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-deep));color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:28px;font-weight:800;box-shadow:0 4px 12px var(--green-glow),0 1px 0 rgba(255,255,255,0.4) inset;letter-spacing:-0.02em}
+  .brand .name{display:flex;flex-direction:column;line-height:1.1}
+  .brand .name .main{font-family:'Inter',sans-serif;font-size:26px;letter-spacing:-0.018em;color:var(--ink);font-weight:800}
+  .brand .name .main b{font-weight:800;color:var(--green-dark)}
+  .brand .name .sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600}
+  .lh-tag{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-dark);font-weight:700;background:rgba(45,198,76,0.08);border:1.5px solid rgba(45,198,76,0.3);padding:9px 18px;border-radius:100px}
+
+  /* TITLE */
+  h1{font-family:'Inter',sans-serif;font-weight:800;font-size:30px;line-height:1.04;letter-spacing:-0.025em;color:var(--ink);margin-bottom:9px}
+  h1 em{font-style:normal;color:var(--green-dark);font-weight:800}
+  .timeline{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border-radius:100px;background:rgba(45,198,76,0.08);border:1.5px solid rgba(45,198,76,0.3);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-deep);font-weight:700;margin-bottom:11px}
+
+  /* LEAD / INTRO */
+  .lead{background:var(--bg-soft);border:1.5px solid var(--line);border-left:4px solid var(--green-dark);border-radius:11px;padding:9px 16px;font-size:12.5px;line-height:1.48;color:var(--ink-soft);margin-bottom:11px}
+  .lead b{color:var(--ink);font-weight:700}
+
+  /* SECTION HEADER */
+  .sec{margin-bottom:10px}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .sec-h .ic{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-0.5px}
+  .sec-h .ic.ic-no{background:linear-gradient(135deg,#D86060,#A03939)}
+  .sec-h .ic.ic-yes{background:linear-gradient(135deg,var(--green),var(--green-dark))}
+  .sec-h .ic.ic-clock{background:linear-gradient(135deg,#5BA8E8,#2B7DC2)}
+  .sec-h h2{font-family:'Inter',sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-0.018em;color:var(--ink)}
+  .sec-h .note{font-weight:500;font-size:13px;color:var(--muted);margin-left:4px}
+
+  /* SCHEDULE TABLE */
+  .sched{width:100%;border-collapse:separate;border-spacing:0;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;font-size:13px}
+  .sched tr{break-inside:avoid}
+  .sched th{background:var(--dark1);color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;text-align:left;padding:5px 14px}
+  .sched th.c-qty{width:210px}
+  .sched td{padding:3px 14px;border-top:1px solid var(--line-soft);vertical-align:middle;color:var(--ink-soft)}
+  .sched tr:nth-child(even of .row) td{background:#FCFCFC}
+  .sched .meal td{background:linear-gradient(90deg,rgba(45,198,76,0.12),rgba(45,198,76,0.03));border-top:1.5px solid rgba(45,198,76,0.25);padding:3.5px 14px}
+  .sched .meal .m-name{font-family:'Inter',sans-serif;font-weight:800;font-size:14px;color:var(--green-deep);letter-spacing:-0.01em}
+  .sched .meal .m-time{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;color:var(--green-dark);background:rgba(45,198,76,0.14);padding:2px 9px;border-radius:100px;margin-left:8px}
+  .sched td.t{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--green-dark);font-size:12px}
+  .sched td.drug b{font-weight:700;color:var(--ink)}
+  .sched td.drug span{color:var(--muted);font-size:12px}
+  .sched td.drug span.eat{color:var(--green-dark);font-weight:700;font-size:11.5px}
+  .sched td.drug span.eat.after{color:#C8881F}
+  .sched td.qty{font-size:12.5px;color:var(--ink-soft);font-weight:500}
+  .sched .phase td{background:#F3F8F4;color:var(--green-deep);font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;padding:2px 14px;border-top:1px solid rgba(45,198,76,0.18)}
+  .sched .night td{background:#0E1F12;color:#fff}
+  .sched .night td.qty{color:#fff}
+  .sched .night .drug b{color:#fff}
+
+  /* BIG IMPORTANT (день до) */
+  .critical{margin:2px 0 12px;background:linear-gradient(135deg,#FBEAEA,#FDF3F3);border:2px solid var(--red-border);border-left:6px solid var(--red);border-radius:14px;padding:11px 18px}
+  .critical .lbl{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--red-border);border-radius:9px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:10px}
+  .critical .lbl::before{content:"⚠";font-size:16px}
+  .critical .items{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .critical .item{display:flex;flex-direction:column;gap:3px;background:#fff;border:1.5px solid var(--red-border);border-radius:10px;padding:9px 12px}
+  .critical .item .big{font-family:'Inter',sans-serif;font-weight:800;font-size:15px;color:var(--ink);line-height:1.15}
+  .critical .item .small{font-size:12px;color:var(--muted);font-weight:500;line-height:1.35}
+  .critical .item .num{width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin-bottom:2px}
+
+  /* DIET GRID */
+  .diet-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:4px}
+  .dcard{background:var(--bg-soft);border:1.5px solid var(--line);border-left:4px solid var(--green-dark);border-radius:9px;padding:6px 11px;font-size:11px;line-height:1.34;color:var(--ink-soft)}
+  .dcard b{display:block;font-family:'Inter',sans-serif;color:var(--green-deep);font-weight:800;font-size:10.5px;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:1px}
+  .dcard.span2{grid-column:1/-1}
+
+  /* EXCLUDE LIST */
+  .ex-list{list-style:none}
+  .ex-list li{display:flex;gap:9px;align-items:flex-start;padding:2.5px 0;font-size:12.5px;line-height:1.35;color:var(--ink-soft);font-weight:500}
+  .ex-list li .x{flex-shrink:0;color:var(--red);font-weight:800;font-size:14px;width:14px;margin-top:1px}
+  .ex-list li b{color:var(--ink);font-weight:700}
+
+  /* TIP CALLOUT */
+  .tip{margin-top:10px;background:linear-gradient(135deg,var(--dark1) 0%,var(--dark2) 50%,var(--dark1) 100%);color:#fff;border-radius:14px;padding:13px 20px;display:flex;align-items:center;gap:14px}
+  .tip .ic{width:40px;height:40px;border-radius:11px;background:rgba(168,240,184,0.18);color:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;border:1.5px solid rgba(168,240,184,0.35)}
+  .tip .info{flex:1}
+  .tip .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--green-light);font-weight:700;margin-bottom:4px}
+  .tip .info p{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#fff;letter-spacing:-0.005em;line-height:1.4}
+  .tip .info p b{color:var(--green-light);font-weight:800}
+
+  /* FOOTER */
+  .ft{padding-top:9px;border-top:2px solid var(--green-dark);margin-top:11px}
+  .ft-line{display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .ft-l{font-size:13px;color:var(--ink);font-weight:500}
+  .ft-l b{font-weight:700}
+  .ft-r{display:flex;align-items:center;gap:10px;background:var(--bg-soft);border:1.5px solid var(--green-dark);border-radius:10px;padding:8px 14px}
+  .ft-phone-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .ft-phone-num{font-family:'JetBrains Mono',monospace;font-size:17px;color:var(--ink);font-weight:800;letter-spacing:0.01em}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<section class="page">
+  <div class="lh">
+    <div class="brand">
+      <div class="badge">B</div>
+      <div class="name">
+        <div class="main">Bisharova <b>Detox</b></div>
+        <div class="sub">Уфа</div>
+      </div>
+    </div>
+    <div class="lh-tag">Подготовка</div>
+  </div>
+
+  <h1>Подготовка <em>к программе «Детоксинг 10»</em></h1>
+  <div class="timeline">★ Начать за 2 недели до программы</div>
+
+  <div class="lead">
+    Это <b>подготовительный этап</b> — две недели перед основной программой «Детоксинг 10».
+    В эти дни организм переходит на растительный рацион и режим приёма желчегонных и
+    противопаразитарных средств, <b>подготовка слизистых</b>, чтобы вход в программу прошёл легко,
+    а очищение — максимально результативнее. Ниже — <b>схема приёма на каждый день</b> и <b>рацион питания</b>.
+  </div>
+
+  <!-- SCHEDULE -->
+  <div class="sec">
+    <div class="sec-h">
+      <div class="ic ic-clock">⏱</div>
+      <h2>Схема приёма на день</h2>
+    </div>
+    <table class="sched">
+      <thead>
+        <tr><th>Что принять</th><th class="c-qty">Количество</th></tr>
+      </thead>
+      <tbody>
+        <!-- ЗАВТРАК -->
+        <tr class="meal"><td colspan="2"><span class="m-name">Завтрак</span><span class="m-time">8:00</span></td></tr>
+        <tr class="row"><td class="drug"><b>Горячая вода 45 °С</b> <span class="eat">(до еды)</span></td><td class="qty">3–4 глотка</td></tr>
+        <tr class="row"><td class="drug"><b>Желчегонный сбор</b> <span>(отвар)</span> <span class="eat">(до еды)</span></td><td class="qty">100 мл</td></tr>
+        <tr class="row"><td class="drug"><b>Алоэ гель</b> <span class="eat">(до еды)</span></td><td class="qty">1 ст. л.</td></tr>
+        <tr class="row"><td class="drug"><b>«9-ка» Стоппаразит</b> <span class="eat">(до еды)</span></td><td class="qty">10 мл</td></tr>
+        <tr class="row"><td class="drug"><b>Экстракт осины</b> <span>(порошок)</span> <span class="eat after">(после еды)</span></td><td class="qty">1 ч. л., запить водой</td></tr>
+        <tr class="row"><td class="drug"><b>Псиллиум</b> <span class="eat after">(после еды)</span></td><td class="qty">1 ч. л. на стакан воды</td></tr>
+
+        <!-- ОБЕД -->
+        <tr class="meal"><td colspan="2"><span class="m-name">Обед</span><span class="m-time">13:00</span></td></tr>
+        <tr class="row"><td class="drug"><b>Горячая вода 45 °С</b> <span class="eat">(до еды)</span></td><td class="qty">3–4 глотка</td></tr>
+        <tr class="row"><td class="drug"><b>Желчегонный сбор</b> <span>(отвар)</span> <span class="eat">(до еды)</span></td><td class="qty">100 мл</td></tr>
+        <tr class="row"><td class="drug"><b>Алоэ гель</b> <span class="eat">(до еды)</span></td><td class="qty">1 ст. л.</td></tr>
+        <tr class="row"><td class="drug"><b>«9-ка» Стоппаразит</b> <span class="eat">(до еды)</span></td><td class="qty">10 мл</td></tr>
+        <tr class="row"><td class="drug"><b>Экстракт осины</b> <span>(порошок)</span> <span class="eat after">(после еды)</span></td><td class="qty">1 ч. л., запить водой</td></tr>
+        <tr class="row"><td class="drug"><b>Псиллиум</b> <span class="eat after">(после еды)</span></td><td class="qty">1 ч. л. на стакан воды</td></tr>
+
+        <!-- УЖИН -->
+        <tr class="meal"><td colspan="2"><span class="m-name">Ужин</span><span class="m-time">18:00</span></td></tr>
+        <tr class="row"><td class="drug"><b>Горячая вода 45 °С</b> <span class="eat">(до еды)</span></td><td class="qty">3–4 глотка</td></tr>
+        <tr class="row"><td class="drug"><b>Желчегонный сбор</b> <span>(отвар)</span> <span class="eat">(до еды)</span></td><td class="qty">100 мл</td></tr>
+        <tr class="row"><td class="drug"><b>Алоэ гель</b> <span class="eat">(до еды)</span></td><td class="qty">1 ст. л.</td></tr>
+        <tr class="row"><td class="drug"><b>«9-ка» Стоппаразит</b> <span class="eat">(до еды)</span></td><td class="qty">10 мл</td></tr>
+        <tr class="row"><td class="drug"><b>Экстракт осины</b> <span>(порошок)</span> <span class="eat after">(после еды)</span></td><td class="qty">1 ч. л., запить водой</td></tr>
+        <tr class="row"><td class="drug"><b>Псиллиум</b> <span class="eat after">(после еды)</span></td><td class="qty">1 ч. л. на стакан воды</td></tr>
+
+        <!-- НА НОЧЬ -->
+        <tr class="meal"><td colspan="2"><span class="m-name">На ночь</span></td></tr>
+        <tr class="night"><td class="drug"><b>Урсосан</b></td><td class="qty">500 мг</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 ============ -->
+<section class="page">
+  <div class="lh">
+    <div class="brand">
+      <div class="badge">B</div>
+      <div class="name">
+        <div class="main">Bisharova <b>Detox</b></div>
+        <div class="sub">Уфа</div>
+      </div>
+    </div>
+    <div class="lh-tag">Питание</div>
+  </div>
+
+  <!-- CRITICAL: день до программы -->
+  <div class="critical">
+    <div class="lbl">За 1 день до программы очищения — обязательно!!!</div>
+    <div class="items">
+      <div class="item"><div class="num">1</div><div class="big">Собрать кал</div><div class="small">Принести с собой в клинику для анализа</div></div>
+      <div class="item"><div class="num">2</div><div class="big">Лёгкий ужин</div><div class="small">Не позднее 19:00</div></div>
+      <div class="item"><div class="num">3</div><div class="big">2 таблетки Но-шпы</div><div class="small">Выпить перед сном</div></div>
+    </div>
+  </div>
+
+  <!-- ДИЕТА: можно -->
+  <div class="sec">
+    <div class="sec-h">
+      <div class="ic ic-yes">✓</div>
+      <h2>Диета на программе <span class="note">— что можно</span></h2>
+    </div>
+    <div class="diet-grid">
+      <div class="dcard"><b>Крупы</b>Гречка, зелёная гречка (вымачивать), пшёнка (вымачивать), бурый рис и басмати (вымачивать), киноа (вымачивать), кукурузная (редко)</div>
+      <div class="dcard"><b>Овощи — лучше термически обработанные</b>Морковь, капуста (цветная, белокочанная, брюссельская, кольраби), салат, свёкла, лук, чеснок, огурцы, тыква, кабачки, баклажаны, репа, редька, авокадо, брокколи. Помидоры и красный перец — иногда</div>
+      <div class="dcard"><b>Бобовые</b>Горох, чечевица, фасоль, нут (вымачивать 12–24 ч). Хумус</div>
+      <div class="dcard"><b>Зелень</b>Петрушка, укроп, базилик, руккола, шпинат и др. (можно замороженную)</div>
+      <div class="dcard"><b>Фрукты</b>Яблоки, груши, киви, лимон, мандарины, апельсины + сезонные (хурма, гранат)</div>
+      <div class="dcard"><b>Ягоды</b>По сезону или замороженные</div>
+      <div class="dcard"><b>Орехи — нежареные</b>Фундук, миндаль, грецкий, кешью. Вымачивать минимум 2 ч (лучше на ночь), просушить</div>
+      <div class="dcard"><b>Масла — только нерафинированные!</b>Подсолнечное, оливковое, льняное, кунжутное, кокосовое</div>
+      <div class="dcard"><b>Сухофрукты — ограниченно</b>Курага, чернослив, инжир, финики, изюм</div>
+      <div class="dcard"><b>Прочее</b>Приправы, имбирь, горчица, мёд, сироп стевии вместо сахара, сыроедческий чёрный шоколад</div>
+      <div class="dcard"><b>Картофель</b>Раз в несколько дней, запечённый</div>
+      <div class="dcard"><b>Ещё</b>Гречневые хлебцы · грибы (иногда) · бездрожжевой безглютеновый хлеб · топлёное масло · травяной чай · растительный протеин</div>
+    </div>
+  </div>
+
+  <!-- ДИЕТА: исключить -->
+  <div class="sec">
+    <div class="sec-h">
+      <div class="ic ic-no">✕</div>
+      <h2>Исключить</h2>
+    </div>
+    <ul class="ex-list">
+      <li><span class="x">✕</span><b>Мясо, птица, рыба, яйца</b>, молочные продукты (молоко, сыр, сметана, йогурт)</li>
+      <li><span class="x">✕</span><b>Кофе, чёрный чай</b></li>
+      <li><span class="x">✕</span><b>Сахар</b> и всё, где он есть: пакетированные соки, печенье, пряники, шоколад и т.д.</li>
+      <li><span class="x">✕</span><b>Дрожжевые продукты</b> — хлеб и вся выпечка</li>
+      <li><span class="x">✕</span><b>Фастфуд</b> и всё с трансжирами и маргарином (майонез, соусы — только домашние)</li>
+    </ul>
+  </div>
+
+  <!-- TIP -->
+  <div class="tip">
+    <div class="ic">💧</div>
+    <div class="info">
+      <div class="lbl">Совет дня</div>
+      <p>Хочешь есть — <b>попей горячей воды!</b> Чаще всего организм хочет пить, а не есть. Горячая вода запускает выделение желчи, ферментов и желудочного сока — и желание поесть уходит. <b>Не путай голод с аппетитом!</b></p>
+    </div>
+  </div>
+
+  <div class="ft">
+    <div class="ft-line">
+      <span class="ft-l"><b>г. Уфа, ул. Ленина, 75, ЖК «Аристократ»</b></span>
+      <span class="ft-r"><span class="ft-phone-lbl">Запись</span><span class="ft-phone-num">8 (967) 453-37-67</span></span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
