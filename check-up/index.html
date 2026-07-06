@@ -58,7 +58,9 @@
   .check-list li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:16px;line-height:1.4;color:var(--ink);font-weight:500}
   .check-list li:last-child{border-bottom:none}
   .check-list li .ic{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:1px;box-shadow:0 2px 6px var(--green-glow)}
+  .check-list li .txt{flex:1}
   .check-list li .txt small{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:2px;line-height:1.4}
+  .check-list li .price{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;color:var(--ink);white-space:nowrap;padding-top:2px}
 
   /* NOTE */
   .note{background:var(--amber-bg);border:1.5px solid var(--amber-border);border-left:5px solid var(--amber);border-radius:12px;padding:14px 18px;margin-bottom:18px}
@@ -130,11 +132,12 @@
 
     <div class="sec-label">Что входит</div>
     <ul class="check-list">
-      <li><span class="ic">✓</span><span class="txt">Исследование желчи</span></li>
-      <li><span class="ic">✓</span><span class="txt">Копрограмма</span></li>
-      <li><span class="ic">✓</span><span class="txt">Кал на дисбактериоз</span></li>
-      <li><span class="ic">✓</span><span class="txt">Анализ крови<small>ОАК · биохимия · ЭКБ · IgE · ферритин · железо</small></span></li>
-      <li><span class="ic">✓</span><span class="txt">ВРТ-диагностика</span></li>
+      <li><span class="ic">✓</span><span class="txt">Исследование желчи</span><span class="price">15 000 ₽</span></li>
+      <li><span class="ic">✓</span><span class="txt">Копрограмма</span><span class="price">4 500 ₽</span></li>
+      <li><span class="ic">✓</span><span class="txt">Кал на дисбактериоз</span><span class="price">4 500 ₽</span></li>
+      <li><span class="ic">✓</span><span class="txt">Анализ крови<small>ОАК · биохимия · ЭКБ · IgE · ферритин · железо</small></span><span class="price">8 000 ₽</span></li>
+      <li><span class="ic">✓</span><span class="txt">ВРТ-диагностика</span><span class="price">10 000 ₽</span></li>
+      <li><span class="ic">✓</span><span class="txt">Тест на обнаружение Хеликобактер Пилори</span><span class="price">2 500 ₽</span></li>
     </ul>
 
     <div class="note">
@@ -149,13 +152,12 @@
     </div>
 
     <div class="promo">
-      <div class="badge-promo">★ Акция · скидка 15%</div>
+      <div class="badge-promo">★ Акция</div>
       <div class="promo-title">Полный чек-ап</div>
       <div class="promo-prices">
         <div class="promo-new">33 150<span class="rub">₽</span></div>
-        <div class="promo-old">39 000 ₽</div>
+        <div class="promo-old">44 500 ₽</div>
       </div>
-      <div class="promo-deadline">⏳ Скидка действует при записи до 30 июня</div>
     </div>
 
     <div class="cta-row">
