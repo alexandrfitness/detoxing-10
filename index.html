@@ -7,7 +7,7 @@
 <meta name="description" content="10-дневная программа восстановления организма с поддержкой врачей. Bisharova Detox, Уфа.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bad+Script&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#FFFFFF;--bg-soft:#FAFAFA;--ink:#000;--ink-soft:#2A2A2A;--muted:#8A8A8A;
@@ -17,7 +17,8 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+  html{overflow-x:hidden}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:clip}
   .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
 
   /* === GLOSSY === */
@@ -478,6 +479,25 @@
     .prep-card{padding:28px 24px}
     .prep-card h3{font-size:26px}
   }
+
+  /* FOUNDER — слово основателя */
+  .founder-sec{background:var(--bg);padding:90px 0}
+  .founder-body{max-width:760px;margin:0 auto}
+  .founder-body p{color:var(--ink-soft);font-size:18px;line-height:1.8;margin-bottom:20px}
+  .founder-sign{margin-top:34px;padding-top:28px;border-top:1px solid var(--line);text-align:right}
+  .sign-hand{font-family:'Bad Script',cursive;font-size:54px;color:#141414;line-height:1;transform:rotate(-3deg);transform-origin:right center;display:inline-block}
+  .sign-role{margin-top:18px;font-size:13.5px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.02em}
+  @media(max-width:600px){.sign-hand{font-size:42px}.founder-body p{font-size:16.5px}}
+
+  /* FAQ */
+  .faq-sec{background:var(--bg-soft);padding:90px 0}
+  .faq{max-width:760px;margin:0 auto}
+  .faq details{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:#fff;overflow:hidden}
+  .faq summary{cursor:pointer;padding:20px 24px;font-size:16px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--green-dark);font-size:22px;font-weight:400;flex-shrink:0}
+  .faq details[open] summary::after{content:"–"}
+  .faq .faq-a{padding:0 24px 22px;font-size:14.5px;color:var(--muted);line-height:1.6}
 </style>
 </head>
 <body>
@@ -490,6 +510,7 @@
       <a href="#stages">Этапы</a>
       <a href="#pricing">Цены</a>
       <a href="#team">Команда</a>
+      <a href="#faq">Вопросы</a>
     </div>
     <div class="nav-actions">
       <a class="nav-phone" href="tel:+79674533767">+7 (967) 453-37-67</a>
@@ -510,6 +531,7 @@
       <a href="#pricing">Цены</a>
       <a href="#reviews">Отзывы</a>
       <a href="#team">Команда</a>
+      <a href="#faq">Частые вопросы</a>
       <a class="btn btn-glossy" href="#contacts">Оставить заявку <span class="arrow">→</span></a>
     </div>
   </div>
@@ -1049,6 +1071,27 @@
           <div class="exp">Практика: 5 лет</div>
         </div>
       </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/team/alfiya.jpg" alt="Альфия — медсестра" loading="lazy"></div>
+        <div class="team-info">
+          <div class="role">Медсестра</div>
+          <div class="name">Альфия</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/team/liza.jpg" alt="Лиза — медсестра" loading="lazy"></div>
+        <div class="team-info">
+          <div class="role">Медсестра</div>
+          <div class="name">Лиза</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/team/ravil.jpg" alt="Равиль — медбрат" loading="lazy"></div>
+        <div class="team-info">
+          <div class="role">Медбрат</div>
+          <div class="name">Равиль</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1310,6 +1353,21 @@
       </table>
     </div>
     <p class="compare-note">Анализы, проживание и питание не входят ни в один тариф — оплачиваются отдельно. Анализы можно сдать у нас в клинике или принести готовые (не старше 1 месяца).</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="wrap">
+    <div class="section-kicker">Частые вопросы</div>
+    <h2 class="section-title">Коротко <em>о главном</em></h2>
+    <div class="faq">
+      <details open><summary>Я не уверен, нужна ли мне программа</summary><div class="faq-a">Начните с чек-апа — за один день вы получите полную картину по ЖКТ, желчи и дефицитам, и врач честно скажет, нужна ли вам программа и в каком формате. Это необязывающий первый шаг.</div></details>
+      <details><summary>Зондирование — это больно?</summary><div class="faq-a">Процедура комфортная. Рядом всегда медсёстры и врач — они контролируют процесс и поддерживают вас на каждом этапе. Длится 4–5 часов, проходит под постоянным наблюдением.</div></details>
+      <details><summary>Это безопасно?</summary><div class="faq-a">Перед программой обязателен чек-ап и консультация врача — мы выявляем противопоказания заранее. Программа проходит под наблюдением врачей с опытом 22–32 года.</div></details>
+      <details><summary>Какие есть противопоказания?</summary><div class="faq-a">Желчнокаменная болезнь, острые воспалительные процессы пищевода/желудка, панические атаки и ряд других состояний. Точно определяет врач на разборе анализов.</div></details>
+      <details><summary>Нужна ли подготовка?</summary><div class="faq-a">Да, 2 недели до программы — мягкий рацион и приём добавок. Мы выдаём подробный PDF-гайд и все препараты на руки.</div></details>
+    </div>
   </div>
 </section>
 
