@@ -868,6 +868,45 @@ a {
   margin: 0;
 }
 
+/* ============ PHOTO GRID ============ */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.photo-card {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+}
+
+.photo-card-wide {
+  grid-column: 1 / -1;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.photo-card-wide img {
+  height: 420px;
+  object-position: center 60%;
+}
+
+.photo-card figcaption {
+  padding: 0.875rem 1.25rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
 /* ============ RESULTS ============ */
 .results-grid {
   display: grid;
@@ -941,12 +980,20 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  min-width: 4rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  min-width: 5.5rem;
   border-radius: var(--radius-full);
   background: var(--color-primary-soft);
   color: var(--color-primary);
+  overflow: hidden;
+}
+
+.doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .doctor-info h3 {
@@ -1496,6 +1543,15 @@ a {
 }
 
 @media (max-width: 640px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-card img,
+  .photo-card-wide img {
+    height: 240px;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr;
   }
